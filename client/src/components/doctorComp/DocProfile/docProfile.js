@@ -105,6 +105,14 @@ class DocProfile extends Component {
                         <Form.Label>
                             YOUR PROFILE
                         </Form.Label>
+                        <Form.File id="formcheck-api-custom" custom>
+                            <Form.File.Input isValid />
+                            <Form.File.Label data-browse="Browse files">
+                                upload your profile photo
+                            </Form.File.Label>
+                         <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>
+                        </Form.File>
+ 
                         <Form.Group  controlId="formPlaintextName">
                         <Form.Label as={Row} column sm="2">
                              Name :
