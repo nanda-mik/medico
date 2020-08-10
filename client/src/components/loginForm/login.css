@@ -1,0 +1,148 @@
+
+.Login{
+    min-height: 70vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    padding-top: 60px;
+}
+
+
+.FormD{
+    margin: auto;
+    width: 40%;
+    text-align: center;
+    box-shadow: 0 2px 3px #ccc;
+    border: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 35vh;
+    transform:translateY(70px)
+    translateX(-120px);
+    
+    
+}
+.FormD button{
+    background: transparent;
+    font-size: large;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: none;
+    color: rgb(93, 149, 223);
+    cursor: pointer;
+    padding: 30px;
+    margin-bottom: 1.5px;
+}
+.FormD button:disabled{
+    cursor: not-allowed;
+    color: gray;
+}
+.FormD button:hover{
+    color: blue;
+    outline: none;
+    border: none;
+}
+.FormD button:focus{
+    outline: none;
+    border: none;
+    color: blue;
+}
+.FormD h1{
+    font-weight: bold;
+    font-size: 20px;
+    color: gray;
+}
+.FormD h3{
+    font-size: 12px;
+    color: black;
+    padding: 5px;
+}
+.FormD h3 button{
+    font-size: 12px;
+    font-family: inherit;
+    border: none;
+    color: rgb(93, 149, 223);
+    padding: 7px;
+}
+.FormD h3 button:hover{
+    color: royalblue;
+    text-decoration: underline;
+}
+
+
+.Img{
+    height: 170px;
+    width: 200px;
+    border-radius: 200px;
+    transform: translateY(40px)
+    translateX(320px);
+}
+.FormP{
+    margin: 20px auto;
+    width: 40%;
+    height: 55vh;
+    text-align: center;
+    box-shadow: 0 2px 3px #ccc;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(167px)
+    translateX(60px);
+}
+.FormP button{
+    background: transparent;
+    font-size: large;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: none;
+    color: rgb(93, 149, 223);
+    cursor: pointer;
+    padding: 30px;
+    margin-bottom: 1.5px;
+}
+.FormP button:disabled{
+    cursor: not-allowed;
+    color: gray;
+}
+.FormP button:hover{
+    color: blue;
+    outline: none;
+    border: none;
+}
+.FormP button:focus{
+    outline: none;
+    border: none;
+    color: blue;
+}
+.FormP h1{
+    font-weight: bold;
+    font-size: 20px;
+    color: gray;
+}
+.FormP h3{
+    font-size: 12px;
+    color: black;
+    padding: 5px;
+}
+.FormP h3 button{
+    font-size: 12px;
+    font-family: inherit;
+    border: none;
+    color: rgb(93, 149, 223);
+    padding: 7px;
+}
+.FormP h3 button:hover{
+    color: royalblue;
+    text-decoration: underline;
+}
+.Google{
+    height: 1.9vmin;
+}
+.Imgg{
+    height: 200px;
+    width: 200px;
+    border-radius: 200px;
+    transform: translateY(40px)
+    translateX(-360px);
+}

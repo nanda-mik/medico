@@ -1,0 +1,4 @@
+export const DoctorActions = {
+    SET_DOCTOR_PROFILE : 'SET_DOCTOR_PROFILE',
+    SET_PATIENT_MONITOR : 'SET_PATIENT_MONITOR'
+}

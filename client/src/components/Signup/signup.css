@@ -1,0 +1,39 @@
+.signup-buttons{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.Docbutton{
+    height: 50vh;
+    width: 550px;
+    background-image: url('https://i.pinimg.com/564x/af/d5/b9/afd5b9e5199d9988ed59024ceb434f87.jpg');
+    transform: translateX(100px)
+    translateY(100px);
+}
+
+.signup-buttons button{
+    font-size: 16px;
+    margin: 100px 70px;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 30%;
+    padding: 10px;
+    font-weight: 200;
+    background: transparent;
+    transition: 1s;
+    background-color: rgba(0,0,0,0.8);
+    color: whitesmoke;
+    transform: translateY(160px);
+}
+.Patientbutton{
+    height: 50vh;
+    width: 550px;
+    background-image: url('https://i.pinimg.com/564x/dc/b9/1e/dcb91e5e3ef3c9d944e791d78da181f1.jpg');
+    transform: translateX(300px)
+    translateY(100px);
+}
+button:hover{
+    border: 1px solid burlywood;
+    color: burlywood;
+}

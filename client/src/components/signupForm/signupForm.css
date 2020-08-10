@@ -1,0 +1,132 @@
+.Signin{
+    
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.Form{
+    width: 50%;
+    text-align: center;
+    box-shadow: 0 5px 5px #ccc;
+    border: 1px solid #eee;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(150px)
+    translateX(120px);
+    height: 75vh;
+
+}
+.Form button{
+    background: transparent;
+    font-size: large;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: none;
+    color: rgb(93, 149, 223);
+    cursor: pointer;
+}
+.Form button:disabled{
+    cursor: not-allowed;
+    color: gray;
+}
+.Form button:hover{
+    color: blue;
+    outline: none;
+    border: none;
+}
+.Form button:focus{
+    outline: none;
+    border: none;
+    color: blue;
+}
+.Form h1{
+    font-weight: bold;
+    font-size: 20px;
+    color: gray;
+}
+.Form h3{
+    font-size: 12px;
+    color: black;
+    padding: 5px;
+}
+.Form h3 button{
+    font-size: 12px;
+    font-family: inherit;
+    border: none;
+    color: rgb(93, 149, 223);
+    padding: 7px;
+}
+.Form h3 button:hover{
+    color: royalblue;
+    text-decoration: underline;
+}
+.Pic img{
+    height: 200px;
+    width: 200px;
+    border-radius: 600px;
+    transform: translateY(20px) 
+    translateX(1000px);
+    
+}
+
+
+.Formm{
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    box-shadow: 0 5px 5px #ccc;
+    border: 1px solid #eee;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(150px)
+    translateX(120px);
+    height: 75vh;
+    padding-top: 60px;
+}
+.Formm button{
+    background: transparent;
+    font-size: large;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: none;
+    color: rgb(93, 149, 223);
+    cursor: pointer;
+}
+.Formm button:disabled{
+    cursor: not-allowed;
+    color: gray;
+}
+.Formm button:hover{
+    color: blue;
+    outline: none;
+    border: none;
+}
+.Formm button:focus{
+    outline: none;
+    border: none;
+    color: blue;
+}
+.Formm h1{
+    font-weight: bold;
+    font-size: 20px;
+    color: gray;
+}
+.Formm h3{
+    font-size: 12px;
+    color: black;
+    padding: 5px;
+}
+.Formm h3 button{
+    font-size: 12px;
+    font-family: inherit;
+    border: none;
+    color: rgb(93, 149, 223);
+    padding: 7px;
+}
+.Formm h3 button:hover{
+    color: royalblue;
+    text-decoration: underline;
+}

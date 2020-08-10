@@ -1,0 +1,12 @@
+.search{
+    -webkit-appearance: none;
+    border: rgb(70, 67, 67);
+    border-style: solid;
+    border-radius: 2px;
+    outline: rgb(54, 53, 53);
+    padding: 10px;
+    width: 450px;
+    line-height: 30px;
+    margin-bottom: 30px;
+    margin-left: 15vh;
+}

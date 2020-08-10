@@ -1,0 +1,33 @@
+{
+  "name": "medico",
+  "version": "1.0.0",
+  "description": "Team members: * Saiprava Raut * Shubhadarshie Nanda",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HAC-2020/techNoids.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HAC-2020/techNoids/issues"
+  },
+  "homepage": "https://github.com/HAC-2020/techNoids#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.27",
+    "nodemailer": "^6.4.11",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "nodemon": "^2.0.4"
+  }
+}

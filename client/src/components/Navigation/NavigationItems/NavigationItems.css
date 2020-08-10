@@ -1,0 +1,61 @@
+.navigation-item {
+  padding: 0rem 1rem;
+  
+}
+
+.navigation-item a {
+  text-decoration: none;
+  color: white;
+  border: none;
+  transition: 1s;
+  border-spacing: 2px;
+  padding: 0.2rem 1.5rem;
+  font-size: 15px;
+  font-family: 'Merienda', cursive;
+  
+}
+
+.navigation-item.mobile {
+  font-size: 1.75rem;
+  margin: 0.5rem 0;
+}
+
+.navigation-item.mobile a {
+  color: #3b0062;
+}
+
+.navigation-item a:hover,
+.navigation-item a:active,
+.navigation-item a.active {
+  color: white;
+  border: 1px solid #7188d1;
+  border-radius: 30px;
+  background-color: #7188d1;
+  
+}
+
+.navigation-item:last-of-type {
+  padding-right: 0.5rem;
+  padding-left: 16rem;
+}
+
+.navigation-item button {
+  font: inherit;
+  background: transparent;
+ border: none;
+  color: white;
+  cursor: pointer;
+  transition: 1s;
+  border-spacing: 2px;
+  padding: 0.1rem 1.4rem;
+  font-size: 15px;
+  font-family: 'Merienda', cursive;
+}
+
+.navigation-item button:hover,
+.navigation-item button:active {
+  color: white;
+  border: 1px solid #7188d1;
+  border-radius: 30px;
+  background-color: #7188d1;
+}

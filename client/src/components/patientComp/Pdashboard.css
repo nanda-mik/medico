@@ -1,0 +1,19 @@
+.Pdash{
+    display: flex;
+    flex-direction: column;
+    padding-left: 400px;
+    padding-top: 100px;
+
+}
+.Pdash h1{
+    font-size: medium;
+    font-family: 'Sriracha', cursive;
+
+}
+.Pdash img{
+    height: 300px;
+    width: 300px;
+    border-radius: 100px;
+    transform: translateX(-310px)
+    translateY(-139px);
+}

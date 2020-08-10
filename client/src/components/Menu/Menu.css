@@ -1,0 +1,62 @@
+.Menu{
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(173, 187, 231);
+    height: 85vh;
+    font-family: 'Merienda', cursive;
+    padding-top: 80px;
+   }
+.Menu img{
+    height: 200px;
+    width: 250px;
+    border-radius: 900px;
+    
+}
+.Content{
+    display: inline-block;
+   width: 30%;
+   
+    block-size: auto;
+    text-align: center;
+   transform: translateX(200px)
+   translateY(50px);
+   
+}
+.Con{
+    
+    margin: 40px;
+    
+}
+.Con p{
+    font-size: 17px;
+}
+.Con h1{
+    font-size: 25px;
+}
+.Con button{
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 50%;
+    font-weight: 200;
+    background: transparent;
+    transition: 1s;
+    transform: translateY(30px);
+    padding: 7px;
+}
+.Con button:hover{
+    border: 1px solid brown;
+    color: brown;
+}
+
+.Image{
+    transform: translateX(200px)
+    translateY(220px);
+}
+.Images{
+    transform: translateY(-200px)
+    translateX(230px);
+}
+
