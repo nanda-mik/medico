@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const pino = require('express-pino-logger')();
+// const pino = require('express-pino-logger')();
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -21,7 +21,7 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.use(pino);
+// app.use(pino);
 
 app.use('/api/video',videoRoutes);
 app.use('/api/auth',authRoutes);
