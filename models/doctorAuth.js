@@ -44,6 +44,9 @@ const doctorSchema = new Schema({
     honors: {
         type: String
     },
+    ratings:{
+        type: Number
+    },
     yearOfExp: {
         type: Number
     },
@@ -53,6 +56,6 @@ const doctorSchema = new Schema({
     invitation: {
         type: Array
     }
-});
+}, {timestamps: true});
 
 module.exports = mongoose.model('doctor', doctorSchema);

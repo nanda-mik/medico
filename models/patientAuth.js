@@ -49,7 +49,10 @@ const patientSchema = new Schema({
     },
     aboutMe: {
         type: String
+    },
+    request:{
+        type: Array
     }
-});
+},{timestamps: true});
 
 module.exports = mongoose.model('patient', patientSchema);
