@@ -9,19 +9,23 @@ const sendgridTransport = require('nodemailer-sendgrid-transport');
 const transporter = nodemailer.createTransport(
     sendgridTransport({
       auth: {
-        api_key:
-          process.env.api_key
+        api_key:process.env.api_key
       }
     })
   );
 
+
 exports.getDoctors = async (req, res, next) => {
     const id = req.userId;
     try {
+        var patient = await Patient.findById(id);
         var docInRel = await Relation.find({ patientId: id });
         var doctors = await Doctor.find();
-        var fdoc = docInRel.map(el => el.doctorId.toString());
-        console.log(fdoc);
+        var reqDoc = patient.request;
+        console.log(reqDoc);
+        var relDoc = docInRel.map(el => el.doctorId.toString());
+        console.log(relDoc);
+        var fdoc = reqDoc.concat(relDoc);
         var filterDoc = doctors.filter(el => !fdoc.includes(el._id.toString()));
         console.log(filterDoc);
         res.status(200).json({ message: "success", users: filterDoc });
@@ -78,11 +82,13 @@ exports.sendRequest = async (req, res, next) => {
     console.log(docId);
     try {
         const doctor = await Doctor.findById(docId);
+        const patient = await Patient.findById(patientId);
+        patient.request.push(docId);
+        await patient.save();
         doctor.invitation.push(patientId);
         await doctor.save();
         res.status(200).json({ message: "success" });
         console.log("email starting");
-        const patient = await Patient.findById(patientId);
         const email = patient.email;
         const name = patient.name;
         const disease = patient.disease;
