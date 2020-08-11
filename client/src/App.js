@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Redirect, Switch, Route } from 'react-router-dom';
+import { Redirect, Switch, Route, withRouter } from 'react-router-dom';
 import './App.css';
 import Menu from './components/Menu/Menu';
 import Signup from './components/Signup/signup';
@@ -421,4 +421,4 @@ const mapDispatchToProps = dispatch => ({
   setPatient : patient => dispatch(setPatient(patient))
 });
 
-export default connect(null,mapDispatchToProps)(App);
+export default withRouter(connect(null,mapDispatchToProps)(App));
