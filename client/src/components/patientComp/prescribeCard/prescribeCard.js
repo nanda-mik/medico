@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import "./prescribeCard.css";
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import {Button} from 'react-bootstrap';
 
 class Cards extends Component {
     constructor(props) {
@@ -8,10 +11,21 @@ class Cards extends Component {
 
     render() {
         return (
-            <div>
-                <div className='card-container'>
-                    <h3>{this.props.data.presData}</h3>
-                    <p>{this.props.data.time}</p>
+            <div className="container">
+               
+                   <div className="Panel">
+                    
+                     <Card className="text-center">
+  <Card.Header>Featured</Card.Header>
+  <Card.Body>
+        <Card.Title>Prescribed on {this.props.data.time}</Card.Title>
+    <Card.Text>
+    {this.props.data.presData}
+    </Card.Text>
+    <Button variant="primary">Mark as read</Button>
+  </Card.Body>
+  <Card.Footer className="text-muted">Rate your doctor</Card.Footer>
+</Card>
                 </div>
             </div>
         );

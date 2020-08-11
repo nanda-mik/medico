@@ -36,7 +36,7 @@ class DocProfile extends Component {
     componentDidMount(){
         let l = Object.keys(this.props.profile).length;
         console.log(l);
-        if(l>2){
+        if(l>2||this.props.profile===null){
             let data = {...this.props.profile}
             this.setState ({
                 loc : {...this.state.loc , city : data.city , state : data.state , zip : data.zip},
@@ -110,7 +110,7 @@ class DocProfile extends Component {
                             <Form.File.Label data-browse="Browse files">
                                 upload your profile photo
                             </Form.File.Label>
-                         <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>
+                        
                         </Form.File>
  
                         <Form.Group  controlId="formPlaintextName">

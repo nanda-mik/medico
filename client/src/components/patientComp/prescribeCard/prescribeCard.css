@@ -1,6 +1,11 @@
-.card-container{
+.container{
     margin: 5px 0;
     text-align: left;
     display: flex;
     flex-direction: column;
+    
+}
+.Panel{
+    height: 30vh;
+    width: 400px;
 }

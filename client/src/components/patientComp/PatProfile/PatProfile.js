@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-
 import { setPatientProfile, setMedicines } from '../../../Redux/Patient/Patient.action';
 import { Form,Button,FormControl,Col ,Row} from 'react-bootstrap';
 import {connect} from 'react-redux';
-
-
-
 import { Redirect } from 'react-router';
 import Axios from 'axios';
 import AddIcon from '@material-ui/icons/Add';
@@ -36,15 +32,17 @@ class PatProfile extends Component {
             disease: "",
             redirect : false,
             medicines : "",
-            aboutMe : ""
+            aboutMe : "",
+            file : null
            
         }
+        
     }
           componentDidMount(){
             let profdata = {...this.props.patientProfile};
             let l = Object.keys(this.props.patientProfile).length;
             console.log(l);
-            if(l>2){
+            if(l>2||this.props.patientProfile===null){
                 
                 this.setState({
                    
@@ -71,7 +69,8 @@ class PatProfile extends Component {
     submitHandler = (e) => {
         e.preventDefault();
         console.log(this.state);
-
+         
+       
         
 
         const options = {
@@ -91,7 +90,8 @@ class PatProfile extends Component {
                 height: this.state.height,
                 disease: this.state.disease,
                 medicines : this.props.medicines,
-                aboutMe: this.state.aboutMe
+                aboutMe: this.state.aboutMe,
+                file : this.state.file
             }
         }
         Axios(options)
@@ -129,6 +129,22 @@ class PatProfile extends Component {
                         <Form.Label>
                             YOUR PROFILE
                         </Form.Label>
+                        <Form.Group>
+                        <Form.File
+              
+              required
+              name="file"
+              label="File"
+             
+              onChange={(e) => this.setState({file : e.target.files[0]})}
+              feedback="file should be jpeg|png|PNG|JPEG"
+              // value={fle}
+            />
+            <FormControl.Feedback type="invalid">
+              Please provide a valid file.
+            </FormControl.Feedback>
+
+          </Form.Group>
                         <Form.Group  controlId="formPlaintextName">
                         <Form.Label as={Row} column sm="2">
                              Name :
