@@ -395,9 +395,7 @@ class App extends Component{
     return (
       <Fragment>
         <ErrorHandler error={this.state.error} onHandle={this.errorHandler} />
-        
         <Layout
-
           header={
             <Toolbar>
               <MainNavigation
@@ -409,8 +407,6 @@ class App extends Component{
             </Toolbar>
           }
         />
-        
-  
         {routes}      
       </Fragment>
     );
