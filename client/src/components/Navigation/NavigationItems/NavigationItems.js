@@ -13,11 +13,13 @@ const navItems = [
   { id: 'monitor', text: 'Monitor', link: '/selfMonitor', auth: true ,isPatient: true, isDoc: false},
   { id: 'doctor', text: 'Doctors', link: '/doctorPanel', auth: true ,isPatient: true, isDoc: false},
   { id: 'prescription', text: 'Prescription', link: '/prescription', auth: true ,isPatient: true, isDoc: false},
+  { id: 'videopanel', text: 'VideoChat', link: '/videoPanel', auth: true ,isPatient: true, isDoc: false},
 
   { id: 'dashboard', text: 'Dashboard', link: '/', auth: true ,isPatient: false, isDoc: true},
   { id: 'profile', text: 'Profile', link: '/doctorProfile', auth: true ,isPatient: false, isDoc: true},
   { id: 'invitation', text: 'Appointment Request', link: '/invitation', auth: true ,isPatient: false, isDoc: true},
   { id: 'prescription', text: 'Prescriptions', link: '/prescription', auth: true ,isPatient: false, isDoc: true},
+  { id: 'videopanel', text: 'VideoChat', link: '/videodoctorPanel', auth: true ,isPatient: false, isDoc: true}
 
 ];
 

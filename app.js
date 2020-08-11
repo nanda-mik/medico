@@ -19,11 +19,11 @@ app.use((req,res,next)=>{
     res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,PUT,DELETE');
     res.setHeader('Access-Control-Allow-Headers','Content-Type,Authorization');
     next();
-})
+});
 
 app.use(pino);
 
-app.use('api/video',videoRoutes);
+app.use('/api/video',videoRoutes);
 app.use('/api/auth',authRoutes);
 app.use('/api/patient',patientRoutes);
 app.use('/api/doctor',doctorRoutes);
