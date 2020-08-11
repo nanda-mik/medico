@@ -1,5 +1,8 @@
 import React, { Component, Fragment } from 'react';
+
 import { Redirect, Switch, Route , withRouter} from 'react-router-dom';
+
+
 import './App.css';
 import Menu from './components/Menu/Menu';
 import Signup from './components/Signup/signup';
@@ -13,6 +16,8 @@ import ErrorHandler from "./components/ErrorHandler/ErrorHandler";
 import Layout from "./components/Layout/Layout";
 import Toolbar from "./components/Toolbar/Toolbar";
 import MainNavigation from "./components/Navigation/MainNavigation/MainNavigation";
+
+import VideoPanel from "./components/videoChat/videoPanel";
 
 //doctor pages
 import DocDashboard from "./components/doctorComp/dashboard";
@@ -359,6 +364,9 @@ class App extends Component{
           <Route exact path="/prescribePage">
             <PrescribePage />
           </Route>
+          <Route exact path="/videodoctorPanel">
+            <VideoPanel />
+          </Route>
           <Redirect to="/" />
         </Switch>
       );
@@ -375,29 +383,26 @@ class App extends Component{
           <Route exact path="/doctorPanel">
             <DoctorPanel />
           </Route>
-
           <Route exact path="/selfMonitor">
             <MonitorPat/>
             </Route>
-
           <Route exact path="/prescription">
             <PatientPrescriptionPanel />
           </Route>
           <Route exact path="/prescribePage">
             <PatientPrescribePage />
-
+          </Route>
+          <Route exact path="/videoPanel">
+            <VideoPanel />
           </Route>
           <Redirect to="/" />
-
         </Switch>
       );
     }
     return (
       <Fragment>
         <ErrorHandler error={this.state.error} onHandle={this.errorHandler} />
-        
         <Layout
-
           header={
             <Toolbar>
               <MainNavigation
@@ -409,8 +414,6 @@ class App extends Component{
             </Toolbar>
           }
         />
-        
-  
         {routes}      
       </Fragment>
     );
