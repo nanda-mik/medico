@@ -8,6 +8,7 @@ import './Pdashboard.css';
 import Graphbp from './Graphs/Graphbp/Graphbp';
 import Graphd from './Graphs/Graphd/Graphd';
 import GraphCovid from './Graphs/GraphCovid/GraphCovid';
+import Carousel from 'react-bootstrap/Carousel'
 
 class Pdashboard extends Component{
     constructor(){
@@ -108,8 +109,47 @@ class Pdashboard extends Component{
 
         return(
             <div className="Pdash">
-                <h1>Patient dashboard!!</h1>
-                <img src="https://i.pinimg.com/564x/a8/6f/1e/a86f1e625615dc42bd92a1c9da683673.jpg" alt="healthy world"/>
+                <div className="Caro">
+               <Carousel>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="holder.js/800x400?text=Third slide&bg=20232a"
+      alt="First slide"
+      
+    />
+    <Carousel.Caption>
+      <h3>Let us begin a new era of communication</h3>
+      <p>Medico brings u easy monitoring process flexible and userfriendly access and many more.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="holder.js/800x400?text=Third slide&bg=20232a"
+      alt="Third slide"
+      
+    />
+
+    <Carousel.Caption>
+      <h3>Find best doctors on your fingertips</h3>
+      <p>We give you to choose your own doctor from your own locality and get monitored by them.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="holder.js/800x400?text=Third slide&bg=20232a"
+      alt="Third slide"
+    />
+
+    <Carousel.Caption>
+      <h3>Chat rooms</h3>
+      <p>Chat rooms best quality appointments.Lets stay healthy together.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
+                </div>
                 <Graphbp/>
                 <Graphd/>
                <GraphCovid/>

@@ -7,7 +7,12 @@ const errorHandler = props => (
       <Modal
         title="An Error Occurred"
         onCancelModal={props.onHandle}
+
+        
+        
+
         acceptEnabled
+
       >
         <p>{props.error.message}</p>
       </Modal>
