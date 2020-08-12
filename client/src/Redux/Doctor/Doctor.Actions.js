@@ -9,5 +9,12 @@ export const setPatientMonitor = patient => ({
     type : DoctorActions.SET_PATIENT_MONITOR,
     payload : patient
 });
-
+export const setInvitations = data => ({
+    type: DoctorActions.SET_INVITATIONS,
+    payload : data
+});
+export const removeInvitations = id => ({
+    type : DoctorActions.REMOVE_INVITATION,
+    payload : id
+});
 

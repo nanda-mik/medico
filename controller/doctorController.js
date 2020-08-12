@@ -89,8 +89,12 @@ exports.confirmInvitation = async (req, res, next) => {
         const doctor = await Doctor.findById(id);
         doctor.invitation.pop();
         await doctor.save();
-        res.status(200).json({ message: "success" });
-    } catch (err) {
+
+        const profileData = await Patient.findById(patId);
+        const monitorData = await Monitor.findOne({patientId: patId});
+        res.status(200).json({ message: "success", profileData: profileData, monitorData: monitorData })
+    }catch(err){
+
         console.log(err);
         next(err);
     }

@@ -6,6 +6,7 @@ import {setDoctorProfile,setPatientMonitor} from '../../Redux/Doctor/Doctor.Acti
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { IconButton } from '@material-ui/core';
 import PatientMonitored from './PatientMonitored';
+import {Card,Button} from 'react-bootstrap';
 
 class dashboard extends Component{
    constructor(props){
@@ -49,21 +50,30 @@ class dashboard extends Component{
                 {console.log(this.props.patient)}
                 <h1>Doctor dashboard!!</h1>
                 {
+                    this.props.patient.length>0 ?
+
                     this.props.patient.map((pat) => {
             
                         return(
                             <div>
-                                <h1>{pat.profile.name}</h1>
-                                <h2>{pat.profile.disease}</h2>
-                                <IconButton onClick={() => this.setState({ hidden : !this.state.hidden })}> <ExpandMoreIcon/> </IconButton>
-                                {
-                                    this.state.hidden ? null : <PatientMonitored id = {pat.profile._id}/>
-                                }
+                                <Card>
+                            <Card.Header>{pat.profile.name}</Card.Header>
+  <Card.Body>
+    <Card.Title>{pat.profile.name}'s report</Card.Title>
+    <Card.Text>
+      I am suffering from {pat.profile.disease}.
+    </Card.Text>
+    <Button variant="primary">View my report!</Button>
+  </Card.Body>
+  <Card.Footer className="text-muted">Your patient</Card.Footer>
+</Card>
                             </div>
                      );
                             
             
                     })
+                    :
+                    null
                 }
             </div>
         );

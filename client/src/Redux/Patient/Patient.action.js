@@ -36,3 +36,7 @@ export const setCovidTracker = count => ({
     type : PatientActions.SET_COVID_TRACKER,
     payload : count
 });
+export const setRead = read => ({
+    type : PatientActions.SET_READ,
+    payload : read
+});

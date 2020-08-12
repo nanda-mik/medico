@@ -7,6 +7,7 @@ export default function Cardlist(props){
     console.log(props.users);
     return <div className="card-list">   
         {props.users.map(user => (
+            
             <UserCard id={user._id} isReq={props.isReq} user={user}/>
         ))}
         </div>;

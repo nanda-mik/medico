@@ -2,7 +2,8 @@ import {DoctorActions} from './Doctor.types';
 
 const INITIAL_STATE = {
     doctorProfile : null,
-    patientMonitored : []
+    patientMonitored : [],
+    invitations : []
 }
 
 const DoctorReducer =(state = INITIAL_STATE , action) => {
@@ -17,6 +18,19 @@ const DoctorReducer =(state = INITIAL_STATE , action) => {
                 ...state,
                 patientMonitored : [...state.patientMonitored , action.payload]
             }
+        case DoctorActions.SET_INVITATIONS: 
+            return {
+                ...state,
+                invitations : action.payload
+            }
+        case DoctorActions.REMOVE_INVITATION:
+            
+                let arr = state.invitations.filter(item => item._id !== action.payload)
+                return{
+                    ...state,
+                    invitations : [arr]
+                }
+            
            
         default :
             return state;

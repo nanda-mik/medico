@@ -56,10 +56,11 @@ class Cards extends Component {
         }
         return (
             <div>
+               
                 <div>
                     
-                   
-                    <Card style={{ width: '18rem' }}>
+                    
+                    <Card style={{ width: '12rem' }}>
                    
                     {this.props.user.gender==="male"?<Card.Img variant="top" src="https://i.pinimg.com/564x/8c/84/02/8c8402b071744be0e51b5ed27aed091b.jpg"/> : <Card.Img variant="top" src="https://i.pinimg.com/564x/01/02/e2/0102e203205553c49d02f5097126c909.jpg"/> }
                      <Card.Body>
