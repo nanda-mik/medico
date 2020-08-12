@@ -93,7 +93,10 @@ class PatProfile extends Component {
                 aboutMe: this.state.aboutMe,
                 file : this.state.file
             }
+            
         }
+        let d = {...options};
+        console.log(d.data);
         Axios(options)
             .then(resData => {
                 if (resData.status !== 200 && resData.status !== 201) {

@@ -25,6 +25,7 @@ import DocProfile from "./components/doctorComp/DocProfile/docProfile";
 import PrescriptionPanel from "./components/doctorComp/PrescriptionPanel/prescriptionPanel";
 import InvitationPanel from "./components/doctorComp/Invitation/invitation";
 import PrescribePage from "./components/doctorComp/prescribePage/prescribePage";
+import InvProfile from './components/doctorComp/Invitation/invProfile';
 
 //patient pages
 import PatDashboard from "./components/patientComp/PDashboard";
@@ -48,7 +49,8 @@ class App extends Component{
     error: null,
     isDoc: false,
     isPatient: false,
-    redirect : false
+    redirect : false,
+    red : false
   };
 
   componentDidMount(){
@@ -292,6 +294,8 @@ class App extends Component{
   };
 
   render(){
+    let redirectm = null;
+    let redirectu= null;
     let routes = (
       <Switch>
         <Route path="/" exact>
@@ -347,6 +351,9 @@ class App extends Component{
       </Switch>
     )
     if(this.state.isAuth && this.state.isDoc){
+
+     
+      redirectm =  <Redirect to ="/"/>;
       routes = (
         <Switch>
           <Route exact path="/">
@@ -367,11 +374,18 @@ class App extends Component{
           <Route exact path="/videodoctorPanel">
             <VideoPanel />
           </Route>
-          <Redirect to="/" />
+          <Route path = "/patientProfile/:id"
+          render = {(props) => (
+         <InvProfile {...props}/>
+         )}/>
+          
+          
+         
         </Switch>
       );
     }
     if(this.state.isAuth && this.state.isPatient){
+      redirectu = <Redirect to="/" />;
       routes = (
         <Switch>
           <Route exact path="/">
@@ -395,7 +409,7 @@ class App extends Component{
           <Route exact path="/videoPanel">
             <VideoPanel />
           </Route>
-          <Redirect to="/" />
+          
         </Switch>
       );
     }
@@ -414,7 +428,9 @@ class App extends Component{
             </Toolbar>
           }
         />
-        {routes}      
+        {routes} 
+        {redirectm}
+        {redirectu}     
       </Fragment>
     );
   }

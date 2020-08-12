@@ -7,6 +7,7 @@ export const PatientActions = {
     SET_PULSE : 'SET_PULSE',
     SET_CAL : 'SET_CAL',
     SET_COVID : 'SET_COVID',
-    SET_COVID_TRACKER : 'SET_COVID_TRACKER'
+    SET_COVID_TRACKER : 'SET_COVID_TRACKER',
+    SET_READ : 'SET_READ'
    
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Axios from "axios";
 import PrescriptionList from "../prescriptionList/prescriptionList";
 
+
 class prescribePage extends Component {
     constructor() {
         super();
@@ -31,7 +32,11 @@ class prescribePage extends Component {
         return (
             <div>
                 <h3>Prescriptions</h3>
+                <div>
+
                 {data.length !== 0 ? <PrescriptionList list={data} /> : <h4>No prescriptions</h4>}
+                </div>
+               
             </div>
         );
     }

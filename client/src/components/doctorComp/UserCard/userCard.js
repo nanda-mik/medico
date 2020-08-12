@@ -2,31 +2,19 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import "./userCard.css";
 import Axios from 'axios';
+import {Card , Button } from 'react-bootstrap';
 
 class Cards extends Component {
     constructor(props) {
         super(props);
         this.state ={
-            redirect: false,
-            redirectToPrescribePage: false
+           
+            redirectToPrescribePage: false,
+            redirectv: false
         }
     }
 
-    submitHandler = (e) => {
-        e.preventDefault();
-        const id = this.props.user._id;
-        const options = {
-            url: 'http://localhost:8080/api/doctor/confirmInvitation/'+id,
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
-            }
-        };
-        Axios(options)
-            .then(res => {
-                this.setState({redirect: true})
-            });
-    }
+    
 
     onClick = (e) =>{
         e.preventDefault();
@@ -35,22 +23,40 @@ class Cards extends Component {
     }
 
     render() {
-        let redirect = false;
-        if(this.state.redirect){
-            redirect = <Redirect to="/" />
-        }
-        let redirectP = false;
+        
+        let redirectP = null;
         if(this.state.redirectToPrescribePage){
-            redirect = <Redirect to="/prescribePage" />
+            redirectP = <Redirect to="/prescribePage" />
+        }
+        let redirectv = null;
+        if(this.state.redirectv){
+            redirectv = <Redirect to = {"/patientProfile/"+this.props.user._id}/>
         }
         return (
             <div>
-                <div className='card-container'>
-                    <h3>name: {this.props.user.name}</h3>
-                    {(this.props.isReq) ? <button onClick={this.submitHandler}>Confirm appointment</button> : <button onClick={this.onClick}>Prescribe</button>}
+                <div >
+                    
+                    <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src="https://i.pinimg.com/564x/77/cd/18/77cd184c35d5c196248ff595a2cd23b7.jpg" />
+  <Card.Body>
+        <Card.Title>{this.props.user.name}</Card.Title>
+        {
+            (this.props.isReq) ?  <Card.Text>
+            Need your appointment!!
+            </Card.Text>:
+             <Card.Text>
+             See my prescription!!
+             </Card.Text>
+        }
+       
+       {(this.props.isReq) ? <Button onClick={() => {this.setState({redirectv : true})}}>View profile</Button> : <Button onClick={this.onClick}>Prescribe</Button>}
+  </Card.Body>
+</Card>
+                    
                 </div>
-                {redirect}
+               
                 {redirectP}
+                {redirectv}
             </div>
         );
 
