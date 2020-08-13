@@ -1,0 +1,36 @@
+{
+  "odisha": {
+    "sunday": {
+      "calories": {
+        "amount": 2250,
+        "percentages": {
+          "carobhydrate": 55,
+          "fat": 20,
+          "protein": 25,
+          "fiber": "34 grams"
+        }
+      },
+      "breakfast": [
+        "One grapefruit Two poached eggs (or fried in a non-stick pan)",
+        "Two slices whole-grain toast with one pat butter each One cup low-fat milk",
+        " One cup of black coffee or herbal tea",
+        "(Macronutrients: approximately 555 calories with 27 grams protein, 63 grams carbohydrates, and 23 grams fat)"
+      ],
+      "lunch": [
+        "Chicken breast (6-ounce portion), baked or roasted (not breaded or fried)",
+        "Large garden salad with tomato and onion with one cup croutons, topped with one tablespoon oil and vinegar (or salad dressing)",
+        "Glass of water ",
+        "(Macronutrients: 425 calories, 44 grams protein, 37 grams carbohydrates, 9 grams fat)"
+      ],
+      "dinner": [
+        "One cup steamed broccoli",
+        "One cup of brown rice",
+        "Halibut (four-ounce portion)",
+        "Small garden salad with one cup spinach leaves, tomato, and onion topped with two tablespoons oil and vinegar or salad dressing",
+        "One glass white wine (regular or dealcoholized)",
+        "Sparkling water with lemon or lime slice",
+        "(646 calories, 42 grams protein, 77 grams carbohydrates, 8 grams fat)"
+      ]
+    }
+  }
+}
