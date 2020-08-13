@@ -16,6 +16,7 @@ import ErrorHandler from "./components/ErrorHandler/ErrorHandler";
 import Layout from "./components/Layout/Layout";
 import Toolbar from "./components/Toolbar/Toolbar";
 import MainNavigation from "./components/Navigation/MainNavigation/MainNavigation";
+import Location from "./components/Location/Location";
 
 import VideoPanel from "./components/videoChat/videoPanel";
 
@@ -50,7 +51,8 @@ class App extends Component{
     isDoc: false,
     isPatient: false,
     redirect : false,
-    red : false
+    red : false,
+    stateName: ""
   };
 
   componentDidMount(){
@@ -416,6 +418,9 @@ class App extends Component{
     return (
       <Fragment>
         <ErrorHandler error={this.state.error} onHandle={this.errorHandler} />
+        <Location
+            stateHandler={(name) => this.setState({ stateName: name })}
+        ></Location>
         <Layout
           header={
             <Toolbar>

@@ -65,7 +65,7 @@ class dashboard extends Component{
     <Card.Text>
       I am suffering from {pat.profile.disease}.
     </Card.Text>
-    <Button variant="primary">View my report!</Button>
+    <Button variant="primary">View report!</Button>
   </Card.Body>
   <Card.Footer className="text-muted" >Your patient</Card.Footer>
 </Card>

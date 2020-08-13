@@ -29,7 +29,7 @@ const stripeBtn = () => {
             name="Medico" 
             description="Pay your doctor after consultation."
             panelLabel="Pay" 
-            amount={49900} 
+            amount={49900}
             token={onToken}
             stripeKey={publishableKey}
             image="https://www.vidhub.co" 
