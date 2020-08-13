@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
 import Axios from 'axios';
 import { removeInvitations,setPatientMonitor } from '../../../Redux/Doctor/Doctor.Actions';
+import { Redirect } from 'react-router';
 
 
 class InvProfile extends Component{
@@ -32,7 +33,7 @@ class InvProfile extends Component{
 
             });
             this.props.removeInvitation(this.props.match.params.id);
-            
+            this.setState({redirect : true});
                
             
     }
@@ -62,9 +63,16 @@ class InvProfile extends Component{
                 );
             }
         })
+        let redirect = null;
+        if(this.state.redirect){
+            redirect = <Redirect to="/"/>
+        }
         return(
             <div>
+            <div>
                 {form}
+            </div>
+            {redirect}
             </div>
         );
     }

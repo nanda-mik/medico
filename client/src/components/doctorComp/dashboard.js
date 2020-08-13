@@ -7,13 +7,15 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { IconButton } from '@material-ui/core';
 import PatientMonitored from './PatientMonitored';
 import {Card,Button} from 'react-bootstrap';
+import './Dashboard.css';
 
 class dashboard extends Component{
    constructor(props){
        super(props);
        this.state = {
            patient : this.props.patient,
-           hidden : true
+           hidden : true,
+           id : null
        }
    }
 
@@ -55,7 +57,7 @@ class dashboard extends Component{
                     this.props.patient.map((pat) => {
             
                         return(
-                            <div>
+                            <div className="Patient">
                                 <Card>
                             <Card.Header>{pat.profile.name}</Card.Header>
   <Card.Body>
@@ -65,7 +67,7 @@ class dashboard extends Component{
     </Card.Text>
     <Button variant="primary">View my report!</Button>
   </Card.Body>
-  <Card.Footer className="text-muted">Your patient</Card.Footer>
+  <Card.Footer className="text-muted" >Your patient</Card.Footer>
 </Card>
                             </div>
                      );
