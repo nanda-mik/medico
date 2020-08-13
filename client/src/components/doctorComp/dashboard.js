@@ -8,6 +8,7 @@ import { IconButton } from '@material-ui/core';
 import PatientMonitored from './PatientMonitored';
 import {Card,Button} from 'react-bootstrap';
 import './Dashboard.css';
+import Report from './Report';
 
 class dashboard extends Component{
    constructor(props){
@@ -58,7 +59,8 @@ class dashboard extends Component{
             
                         return(
                             <div className="Patient">
-                                <Card>
+                               <Report users={pat.profile} />
+                            {/* <Card>
                             <Card.Header>{pat.profile.name}</Card.Header>
   <Card.Body>
     <Card.Title>{pat.profile.name}'s report</Card.Title>
@@ -68,7 +70,7 @@ class dashboard extends Component{
     <Button variant="primary">View my report!</Button>
   </Card.Body>
   <Card.Footer className="text-muted" >Your patient</Card.Footer>
-</Card>
+  </Card>*/}
                             </div>
                      );
                             

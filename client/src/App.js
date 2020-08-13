@@ -39,6 +39,7 @@ import MonitorPat from './components/patientComp/MonitorPat/MonitorPat';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {setPatient} from './Redux/Patient/Patient.action';
 import {connect} from 'react-redux';
+import PatientMonitored from './components/doctorComp/PatientMonitored';
 
 
 class App extends Component{
@@ -378,7 +379,11 @@ class App extends Component{
           render = {(props) => (
          <InvProfile {...props}/>
          )}/>
-          
+          <Route 
+          path = "/details/:id"
+          render = {(props) => (
+            <PatientMonitored {...props}/>
+          )}/>
           
          
         </Switch>
