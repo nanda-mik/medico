@@ -41,7 +41,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {setPatient} from './Redux/Patient/Patient.action';
 import {connect} from 'react-redux';
 
-
 class App extends Component{
   state = {
     isAuth: false,
@@ -67,13 +66,11 @@ class App extends Component{
       return;
     }
     const userId = localStorage.getItem('userId');
-    this.setState({ isAuth: false, });
+    console.log(type);
     if(type === "doc"){
       this.setState({isDoc: true, isAuth: true, token: token, userId: userId });
     }else if(type === "patient"){
       this.setState({isPatient: true, isAuth: true, token: token, userId: userId });
-    }else{
-      this.setState({isAuth: false});
     }
     const remainingMilliseconds =
       new Date(expiryDate).getTime() - new Date().getTime();
@@ -198,7 +195,6 @@ class App extends Component{
 
   patientSignupHandler = (event, authData) => {
     event.preventDefault();
-    this.setState({ authLoading: true });
     const options = {
       url: 'http://localhost:8080/api/auth/patientSignup',
       method: 'PUT',
@@ -343,8 +339,6 @@ class App extends Component{
       </Switch>
     )
     if(this.state.isAuth && this.state.isDoc){
-
-     
       redirectm =  <Redirect to ="/"/>;
       routes = (
         <Switch>
@@ -370,9 +364,6 @@ class App extends Component{
           render = {(props) => (
          <InvProfile {...props}/>
          )}/>
-          
-          
-         
         </Switch>
       );
     }
@@ -401,7 +392,6 @@ class App extends Component{
           <Route exact path="/videoPanel">
             <VideoPanel />
           </Route>
-          
         </Switch>
       );
     }

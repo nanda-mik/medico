@@ -1,12 +1,7 @@
 var CACHE_NAME = 'medico';
 var urlsToCache = [
-  '/',
   '/signup',
-  '/docSignup',
-  '/patientSignup',
-  '/login',
-  '/docLogin',
-  '/patientLogin'
+  '/login'
 ];
 
 // Install a service worker
