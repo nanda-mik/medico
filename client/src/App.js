@@ -67,14 +67,16 @@ class App extends Component{
       return;
     }
     const userId = localStorage.getItem('userId');
+    this.setState({ isAuth: false, });
     if(type === "doc"){
-      this.setState({isDoc: true});
+      this.setState({isDoc: true, isAuth: true, token: token, userId: userId });
     }else if(type === "patient"){
-      this.setState({isPatient: true});
+      this.setState({isPatient: true, isAuth: true, token: token, userId: userId });
+    }else{
+      this.setState({isAuth: false});
     }
     const remainingMilliseconds =
       new Date(expiryDate).getTime() - new Date().getTime();
-    this.setState({ isAuth: true, isAdmin:false, token: token, userId: userId });
     this.setAutoLogout(remainingMilliseconds);
   }
 
@@ -133,12 +135,6 @@ class App extends Component{
           userId: resData.data.userId
         });
         this.setAutoLogout(remainingMilliseconds);
-        this.setState({
-          isAuth: true,
-          isPatient: true,
-          token: resData.data.token,
-          userId: resData.data.userId
-        });
       })
       .catch(err => {
         console.log(err);
@@ -189,12 +185,6 @@ class App extends Component{
           userId: resData.data.userId
         });
         this.setAutoLogout(remainingMilliseconds);
-        this.setState({
-          isAuth: true,
-          isDoc: true,
-          token: resData.data.token,
-          userId: resData.data.userId
-        });
       })
       .catch(err => {
         console.log(err);
@@ -417,7 +407,7 @@ class App extends Component{
     }
     return (
       <Fragment>
-        <ErrorHandler error={this.state.error} onHandle={this.errorHandler} />
+        {/* <ErrorHandler error={this.state.error} onHandle={this.errorHandler} /> */}
         <Location
             stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>
