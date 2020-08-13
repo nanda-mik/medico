@@ -27,9 +27,9 @@ class Pdashboard extends Component{
             .then(res => {
                 console.log(res.data);
                 console.log(this.props.patientprofile)
-                if(this.props.patientprofile===null){
+                
                     this.props.setPatientProfile(res.data.profile);
-                }
+                
                 let profiles = {...res.data.profile};
                 console.log(profiles.medicines);
                 if(profiles.medicines.length > 0){

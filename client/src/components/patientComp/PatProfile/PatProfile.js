@@ -42,7 +42,7 @@ class PatProfile extends Component {
             let profdata = {...this.props.patientProfile};
             let l = Object.keys(this.props.patientProfile).length;
             console.log(l);
-            if(l>2||this.props.patientProfile===null){
+            if(l>2||this.props.patientProfile!==null){
                 
                 this.setState({
                    
@@ -91,7 +91,7 @@ class PatProfile extends Component {
                 disease: this.state.disease,
                 medicines : this.props.medicines,
                 aboutMe: this.state.aboutMe,
-                file : this.state.file
+                
             }
             
         }
@@ -132,22 +132,7 @@ class PatProfile extends Component {
                         <Form.Label>
                             YOUR PROFILE
                         </Form.Label>
-                        <Form.Group>
-                        <Form.File
-              
-              required
-              name="file"
-              label="File"
-             
-              onChange={(e) => this.setState({file : e.target.files[0]})}
-              feedback="file should be jpeg|png|PNG|JPEG"
-              // value={fle}
-            />
-            <FormControl.Feedback type="invalid">
-              Please provide a valid file.
-            </FormControl.Feedback>
-
-          </Form.Group>
+                        
                         <Form.Group  controlId="formPlaintextName">
                         <Form.Label as={Row} column sm="2">
                              Name :
@@ -318,7 +303,7 @@ class PatProfile extends Component {
                         <Form.Group md="4" controlId="medicines">
                             
                             <Form.Control 
-                            required
+                            
                             autoFocus
                             type="text"
                             placeholder="Name medicines"
@@ -372,7 +357,8 @@ class PatProfile extends Component {
 
 let mapStateToProps = function mapStateToProps (state){
     return{
-        patientProfile : state.patient.patientProfile
+        patientProfile : state.patient.patientProfile,
+        medicines : state.patient.medicines
     }
 }
 
