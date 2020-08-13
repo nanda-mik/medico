@@ -21,11 +21,11 @@ class Patgraphs extends Component {
         let count = 0;
         
         this.props.patient.map((pat) => {
-            if(pat.profile._id === this.state.id ){
+            if(pat.profile._id === this.state.id&&pat.monitor.diabetes!==null ){
                 arrs = pat.monitor.diabetes.map((bp) => {
                 console.log(bp.typeA);
                 return ({
-                    y : parseInt(bp.typeA), label : "bp"
+                    y : parseInt(bp.typeA), label : bp.date
                 })
             })
         }
@@ -36,7 +36,7 @@ class Patgraphs extends Component {
             if(pat.profile._id === this.state.id ){
                 arrd = pat.monitor.diabetes.map((bp) => {
                 return ({
-                    y : parseInt(bp.typeB) , label : "bp"
+                    y : parseInt(bp.typeB) , label : bp.date
                 })
             })
         }
@@ -45,36 +45,36 @@ class Patgraphs extends Component {
        console.log(arrd);
 		const options = {
             animationEnabled: true,	
-            theme: "dark2",
-            backgroundColor : "dimgrey",
+            theme: "light2",
+            backgroundColor : "white",
             title:{
-                text: "BloodPressure Monitor"
+                text: "Diabetes Monitor"
             },
             axisY : {
-                title: "Blood Pressure"
+                title: "Diabetes"
             },
             toolTip: {
                 shared: true
             },
             data: [{
                 type: "spline",
-                name: "Systolic",
+                name: "type-B",
                 showInLegend: true,
                 dataPoints: arrs
             },
             {
                 type: "spline",
-                name: "diastolic",
+                name: "type-B",
                 showInLegend: true,
                 dataPoints: arrd
             }]
     }
     let graphs = null;
     this.props.patient.map((pat) => {
-        console.log(pat.monitor.bloodpressure);
+       
         if(pat.profile._id === this.state.id){
            console.log(pat.monitor.diabetes.length);
-            if(pat.monitor.diabetes.length>0){
+            if(pat.monitor.diabetes.length>0 && pat.monitor.diabetes !==null){
                 graphs = <CanvasJSChart options = {options} 
 			/>
             }

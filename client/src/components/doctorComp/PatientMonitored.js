@@ -2,17 +2,22 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import Patgraphs from './Patgraphs/Patgraphs';
 import Patgraphsd from './Patgraphs/Patgraphsd';
+import {Card,Button} from 'react-bootstrap';
+import { Redirect } from 'react-router';
 
 class PatientMonitored extends Component {
     constructor(props){
         super(props);
-        this.state ={
-            id : props.id
-
+        this.state={
+            redirect : false
         }
     }
-        render(){
 
+        render(){
+            let redirect = false;
+            if(this.state.redirect){
+                redirect = <Redirect to="/" />
+            }
             return(
                 
                 <div>
@@ -20,17 +25,24 @@ class PatientMonitored extends Component {
                     {
                         this.props.patient.map((pat) => {
                            
-                            if(pat.profile._id === this.state.id){
+                            if(pat.profile._id === this.props.match.params.id){
                                 return (
-                                    <div>
-                                        <h2>{pat.profile.gender}</h2>
-                                <h2>{pat.profile.age}</h2>
-                                        <h2>{pat.profile.height}</h2>
-                                <h2>{pat.profile.weight}</h2>
-                                <h2>{pat.profile.contact1}</h2>
-                                <h2>{pat.profile.city}</h2>
-                                <Patgraphs id={pat.profile._id} />
-                                <Patgraphsd id={pat.profile._id}/>
+                                    <div className="Report">
+                                        
+                                <Card className="text-center">
+                                <Card.Header>Patient's Self Monitored Report</Card.Header>
+                                <Card.Body>
+                                <Card.Title>{pat.profile.name}</Card.Title>
+    
+                                    {pat.monitor!==null? <Card.Text>This are my self Monitored data.</Card.Text> : <Card.Text>Sorry!!I have not monitored myself yet!!</Card.Text>}
+                                    {pat.monitor!==null?<Patgraphs id={pat.profile._id} />:null}
+                                    {pat.monitor!==null? <Patgraphsd id={pat.profile._id}/>:null}
+                                    <Button variant="primary" onClick = {()=> this.setState({redirect : true})}>Go To Dashboard</Button>
+                                    </Card.Body>
+                                     <Card.Footer className="text-muted">2 days ago</Card.Footer>
+                                    </Card>
+                                    {redirect}
+                               
                                     </div>
                                 )
                             }

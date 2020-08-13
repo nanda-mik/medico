@@ -21,11 +21,11 @@ class Patgraphs extends Component {
         let count = 0;
         
         this.props.patient.map((pat) => {
-            if(pat.profile._id === this.state.id ){
+            if(pat.profile._id === this.state.id&&pat.monitor.bloodpressure!==null ){
                 arrs = pat.monitor.bloodpressure.map((bp) => {
-                console.log(bp.systolic);
+                
                 return ({
-                    y : parseInt(bp.systolic), label : "bp"
+                    y : parseInt(bp.systolic), label : bp.date
                 })
             })
         }
@@ -36,7 +36,7 @@ class Patgraphs extends Component {
             if(pat.profile._id === this.state.id ){
                 arrd = pat.monitor.bloodpressure.map((bp) => {
                 return ({
-                    y : parseInt(bp.diastolic) , label : "bp"
+                    y : parseInt(bp.diastolic) , label : bp.date
                 })
             })
         }
@@ -45,8 +45,8 @@ class Patgraphs extends Component {
        console.log(arrd);
 		const options = {
             animationEnabled: true,	
-            theme: "dark2",
-            backgroundColor : "dimgrey",
+            theme: "light2",
+            backgroundColor : "white",
             title:{
                 text: "BloodPressure Monitor"
             },
@@ -71,10 +71,10 @@ class Patgraphs extends Component {
     }
     let graphs = null;
     this.props.patient.map((pat) => {
-        console.log(pat.monitor.bloodpressure);
+       
         if(pat.profile._id === this.state.id){
-           console.log(pat.monitor.bloodpressure.length);
-            if(pat.monitor.bloodpressure.length>0){
+          
+            if(pat.monitor.bloodpressure.length>0&&pat.monitor.bloodpressure!==null){
                 graphs = <CanvasJSChart options = {options} 
 			/>
             }
