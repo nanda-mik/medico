@@ -10,6 +10,7 @@ const authRoutes = require('./routes/authRoutes');
 const patientRoutes = require('./routes/patientRoutes');
 const doctorRoutes = require('./routes/doctorRoutes');
 const videoRoutes = require('./routes/videoRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -22,7 +23,7 @@ app.use((req,res,next)=>{
 });
 
 // app.use(pino);
-
+app.use('/notifications', notificationRoutes);
 app.use('/api/video',videoRoutes);
 app.use('/api/auth',authRoutes);
 app.use('/api/patient',patientRoutes);

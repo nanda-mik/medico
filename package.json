@@ -30,6 +30,7 @@
     "nodemailer": "^6.4.11",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "nodemon": "^2.0.4",
-    "twilio": "^3.48.2"
+    "twilio": "^3.48.2",
+    "web-push": "^3.4.4"
   }
 }
