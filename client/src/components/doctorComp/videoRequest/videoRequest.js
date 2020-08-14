@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
+import VideoCard from './VideoCard';
+
 class VideoRequest extends Component{
     constructor(){
         super();
@@ -19,7 +21,7 @@ class VideoRequest extends Component{
           Axios(options)
             .then(res => {
                 console.log(res);
-                this.setState({request: res});
+                this.setState({request: res.data.arr});
             })
             .catch(err =>{
                 console.log(err);
@@ -27,10 +29,29 @@ class VideoRequest extends Component{
     }
     render(){
         console.log(this.state.request);
-        let data = this.state.request;
+        let datas = this.state.request;
         return(
             <div>
-                {data}
+                {
+                    datas.map((data) => {
+                        return(
+                            <div>
+                        <VideoCard user={data}/>
+                        </div>
+                        );
+                    })
+                }
+                  {/*<Card style={{ width: '18rem' }}>
+<Card.Img variant="top" src="https://i.pinimg.com/564x/69/02/56/69025672dde3b9f5382bfb0f81270fe3.jpg" />
+  <Card.Body>
+    <Card.Title>Request for Video Appointment</Card.Title>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+    <Button variant="primary">Go somewhere</Button>
+  </Card.Body>
+</Card>*/}
             </div>
         );
     }

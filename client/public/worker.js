@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 var CACHE_NAME = 'medico';
 var urlsToCache = [
   '/signup',
@@ -27,6 +30,7 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
+>>>>>>> 18f527a212268efac84ae2a6a042614d1791f7b1
 
 self.addEventListener('push', (event) => {
   const data = event.data.json();

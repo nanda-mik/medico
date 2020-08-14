@@ -1,33 +1,20 @@
 import React, { Component } from 'react';
 import "./prescribeCard.css";
 import Card from 'react-bootstrap/Card';
-import { Button } from 'react-bootstrap';
+
+import {Button} from 'react-bootstrap';
 import Axios from 'axios';
 
 class Cards extends Component {
-
-    submitHandler = (e) => {
-        e.preventDefault();
-        const id = localStorage.getItem('docId');
-        console.log(id);
-        const options = {
-            url: `${process.env.REACT_APP_LINK}/api/patient/sendVideoRequest/` + id,
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('token')
-            }
-        };
-        Axios(options)
-            .then(res => {
-                console.log(res);
-            });
-    }
+    
+   
 
     render() {
         return (
+
             <div>
                 <div>
-                <Button onClick={this.submitHandler}>Request for Video appointment</Button> 
+               
                 </div>
                 <div className="container">
                     <div className="Panel">
@@ -44,6 +31,7 @@ class Cards extends Component {
                             <Card.Footer className="text-muted">Rate your doctor</Card.Footer>
                         </Card>
                     </div>
+
                 </div>
             </div>
 

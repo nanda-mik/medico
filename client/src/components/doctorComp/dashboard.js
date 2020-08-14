@@ -52,19 +52,7 @@ class dashboard extends Component {
           ? this.props.patient.map((pat) => {
               return (
                 <div className="Patient">
-                  <Card>
-                    <Card.Header>{pat.profile.name}</Card.Header>
-                    <Card.Body>
-                      <Card.Title>{pat.profile.name}'s report</Card.Title>
-                      <Card.Text>
-                        I am suffering from {pat.profile.disease}.
-                      </Card.Text>
-                      <Button variant="primary">View report!</Button>
-                    </Card.Body>
-                    <Card.Footer className="text-muted">
-                      Your patient
-                    </Card.Footer>
-                  </Card>
+                  <Report id={pat.profile.id} users={pat.profile}/>
                 </div>
               );
             })

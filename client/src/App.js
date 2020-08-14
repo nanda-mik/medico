@@ -70,7 +70,8 @@ class App extends Component {
       return;
     }
     const userId = localStorage.getItem('userId');
-    // this.setState({ isAuth: false });
+
+   
     if (type === 'doc') {
       this.setState({
         isDoc: true,
@@ -85,6 +86,7 @@ class App extends Component {
         token: token,
         userId: userId,
       });
+
     }
     const remainingMilliseconds =
       new Date(expiryDate).getTime() - new Date().getTime();
@@ -217,7 +219,7 @@ class App extends Component {
 
   patientSignupHandler = (event, authData) => {
     event.preventDefault();
-    const options = {
+        const options = {
       url: `${process.env.REACT_APP_LINK}/api/auth/patientSignup`,
       method: 'PUT',
       headers: {
