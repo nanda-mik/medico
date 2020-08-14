@@ -11,6 +11,7 @@ import { IconButton } from '@material-ui/core';
 import PatientMonitored from './PatientMonitored';
 import { Card, Button } from 'react-bootstrap';
 import './Dashboard.css';
+import Report from './Report';
 
 class dashboard extends Component {
   constructor(props) {

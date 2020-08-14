@@ -43,6 +43,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { setPatient } from './Redux/Patient/Patient.action';
 import { connect } from 'react-redux';
 import Chat from 'twilio/lib/rest/Chat';
+import PatientMonitored from './components/doctorComp/PatientMonitored';
 
 class App extends Component {
   state = {
@@ -153,12 +154,6 @@ class App extends Component {
           userId: resData.data.userId,
         });
         this.setAutoLogout(remainingMilliseconds);
-        this.setState({
-          isAuth: true,
-          isPatient: true,
-          token: resData.data.token,
-          userId: resData.data.userId,
-        });
       })
       .catch((err) => {
         console.log(err);
@@ -210,12 +205,6 @@ class App extends Component {
           userId: resData.data.userId,
         });
         this.setAutoLogout(remainingMilliseconds);
-        this.setState({
-          isAuth: true,
-          isDoc: true,
-          token: resData.data.token,
-          userId: resData.data.userId,
-        });
       })
       .catch((err) => {
         console.log(err);
@@ -229,7 +218,6 @@ class App extends Component {
 
   patientSignupHandler = (event, authData) => {
     event.preventDefault();
-    this.setState({ authLoading: true });
     const options = {
       url: `${process.env.REACT_APP_LINK}/api/auth/patientSignup`,
       method: 'PUT',
@@ -361,8 +349,8 @@ class App extends Component {
         <Redirect to="/" />
       </Switch>
     );
-    if (this.state.isAuth && this.state.isDoc) {
-      redirectm = <Redirect to="/" />;
+    if(this.state.isAuth && this.state.isDoc){
+      redirectm =  <Redirect to ="/"/>;
       routes = (
         <Switch>
           <Route exact path="/">
@@ -383,10 +371,15 @@ class App extends Component {
           <Route exact path="/videodoctorPanel">
             <VideoPanel />
           </Route>
-          <Route
-            path="/patientProfile/:id"
-            render={(props) => <InvProfile {...props} />}
-          />
+          <Route path = "/patientProfile/:id"
+          render = {(props) => (
+         <InvProfile {...props}/>
+         )}/>
+          <Route 
+          path = "/details/:id"
+          render = {(props) => (
+            <PatientMonitored {...props}/>
+          )}/>
         </Switch>
       );
     }
@@ -424,7 +417,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        <ErrorHandler error={this.state.error} onHandle={this.errorHandler} />
+        {/* <ErrorHandler error={this.state.error} onHandle={this.errorHandler} /> */}
         <Location
           stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>

@@ -19,8 +19,8 @@ class GraphCovid extends Component {
        
 		const options = {
             animationEnabled: true,	
-            theme: "dark2",
-            backgroundColor : "dimgrey",
+            theme: "light2",
+            backgroundColor : "white",
             title:{
                 text: "Diabetes Monitor"
             },
