@@ -10,6 +10,6 @@ const prescribeSchema = new Schema({
             presData: String,
             time: String
         }]
-});
+},{timestamps:true});
 
 module.exports = mongoose.model('prescribe', prescribeSchema);

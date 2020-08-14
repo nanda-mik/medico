@@ -3,6 +3,7 @@ const Patient = require('../models/patientAuth');
 const Relation = require('../models/relation');
 const Prescription = require('../models/prescription');
 const Monitor = require('../models/monitorData');
+const Appointment = require('../models/appointments');
 
 exports.getProfile = async(req, res, next) => {
     const id = req.userId;
@@ -163,6 +164,43 @@ exports.addPrescription = async(req, res, next) => {
             console.log(resu);
         }
         res.status(200).json({message: "success"});
+    }catch(err){
+        console.log(err);
+        next(err);
+    }
+}
+
+exports.checkRequest = async(req, res, next) => {
+    const id = req.userId;
+    try{
+        const doctor = await Doctor.findById(id);
+        let appointArr = doctor.appointment;
+        console.log(appointArr);
+        var arr = [];
+        for(let i=0;i<appointArr.length;i++){
+            const patient  = await Patient.findById(appointArr[i]);
+            arr.push(patient);
+        }
+        console.log(arr);
+        res.status(200).json({message: "success", arr: arr});
+    }catch(err){
+        console.log(err);
+        next(err);
+    }
+}
+
+exports.saveAppointments = async(req, res, next) => {
+    const id = req.userId;
+    const patientId = req.params.patientId;
+    try{
+        const body = req.body;
+        const appointment = new Appointment({
+            event: body,
+            patientId: patientId,
+            doctorId: id
+        });
+        await appointment.save();
+        res.status(201).json({message: 'success'});
     }catch(err){
         console.log(err);
         next(err);

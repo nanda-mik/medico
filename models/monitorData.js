@@ -21,6 +21,6 @@ const monitorDataSchema = new Schema({
     pulse:{
         type: Array
     }
-});
+},{timestamps: true});
 
 module.exports = mongoose.model('monitor', monitorDataSchema);

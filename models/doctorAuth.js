@@ -55,6 +55,9 @@ const doctorSchema = new Schema({
     },
     invitation: {
         type: Array
+    },
+    appointment:{
+        type: Array
     }
 }, {timestamps: true});
 

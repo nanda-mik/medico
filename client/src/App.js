@@ -18,8 +18,6 @@ import MainNavigation from './components/Navigation/MainNavigation/MainNavigatio
 import Location from './components/Location/Location';
 import Diet from './components/diet/diet';
 
-import VideoPanel from './components/videoChat/videoPanel';
-
 //doctor pages
 import DocDashboard from './components/doctorComp/dashboard';
 import DocProfile from './components/doctorComp/DocProfile/docProfile';
@@ -27,6 +25,7 @@ import PrescriptionPanel from './components/doctorComp/PrescriptionPanel/prescri
 import InvitationPanel from './components/doctorComp/Invitation/invitation';
 import PrescribePage from './components/doctorComp/prescribePage/prescribePage';
 import InvProfile from './components/doctorComp/Invitation/invProfile';
+import VideoRequest from './components/doctorComp/videoRequest/videoRequest';
 
 //patient pages
 import PatDashboard from './components/patientComp/PDashboard';
@@ -369,7 +368,7 @@ class App extends Component {
             <PrescribePage />
           </Route>
           <Route exact path="/videodoctorPanel">
-            <VideoPanel />
+            <VideoRequest/>
           </Route>
           <Route path = "/patientProfile/:id"
           render = {(props) => (
@@ -404,9 +403,6 @@ class App extends Component {
           </Route>
           <Route exact path="/prescribePage">
             <PatientPrescribePage />
-          </Route>
-          <Route exact path="/videoPanel">
-            <VideoPanel />
           </Route>
           <Route exact path="/diet">
             <Diet />

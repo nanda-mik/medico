@@ -70,14 +70,6 @@ const navItems = [
     isDoc: false,
   },
   {
-    id: 'videopanel',
-    text: 'VideoChat',
-    link: '/videoPanel',
-    auth: true,
-    isPatient: true,
-    isDoc: false,
-  },
-  {
     id: 'diet',
     text: 'Diet',
     link: '/diet',
@@ -120,7 +112,7 @@ const navItems = [
   },
   {
     id: 'videopanel',
-    text: 'VideoChat',
+    text: 'Video Request',
     link: '/videodoctorPanel',
     auth: true,
     isPatient: false,
