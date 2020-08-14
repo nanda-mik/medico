@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import doctorReducer from './Doctor/Doctor.reducer';
 
-
 import patientReducer from './Patient/Patient.reducer';
+import dietReducer from './Diet/reducer';
 
 /*{const persistConfig ={
     key: 'root',
@@ -11,9 +11,9 @@ import patientReducer from './Patient/Patient.reducer';
 }}*/
 
 const rootReducer = combineReducers({
-    
-    doctor: doctorReducer,
-    patient : patientReducer
+  doctor: doctorReducer,
+  patient: patientReducer,
+  diet: dietReducer,
 });
 
 export default rootReducer;
