@@ -1,22 +1,17 @@
 import React, { Fragment } from 'react';
 import Modal from '../Modal/Modal';
 
-const errorHandler = props => (
+const errorHandler = (props) => (
   <Fragment>
-    {props.error && (
+    {props.error ? (
       <Modal
         title="An Error Occurred"
         onCancelModal={props.onHandle}
-
-        
-        
-
         acceptEnabled
-
       >
         <p>{props.error.message}</p>
       </Modal>
-    )}
+    ) : null}
   </Fragment>
 );
 
