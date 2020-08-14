@@ -5,6 +5,10 @@ import PrescriptionList from "../prescriptionList/prescriptionList";
 import {connect} from 'react-redux';
 
 
+    /*const CLIENT_ID = "185334468057-0ikd8rea7drp4rmkjvte2n1k756e60mf.apps.googleusercontent.com";
+    const API_KEY ="AIzaSyB1wAxp6JbIg3GEgnPjOYW_DAfVnMl5Udo";
+    const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+    const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";*/
 class prescribePage extends Component {
     constructor() {
         super();
@@ -14,6 +18,8 @@ class prescribePage extends Component {
             prescribe: ""
         };
     }
+    
+   
 
     componentDidMount() {
         const id = localStorage.getItem('patId');
@@ -121,11 +127,13 @@ class prescribePage extends Component {
                     >
                         PRESCRIBE
                     </Button>
+                    
                 </Form>
             </div>
         );
     }
 }
+
 
 let mapStateToProps = function mapStateTopProps (state) {
     return{

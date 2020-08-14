@@ -3,18 +3,34 @@ import "./prescribeCard.css";
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import {Button} from 'react-bootstrap';
+import Axios from 'axios';
 
 class Cards extends Component {
-    constructor(props) {
-        super(props);
+    
+    submitHandler = (e) => {
+        e.preventDefault();
+        const id = localStorage.getItem('docId');
+        console.log(id);
+        const options = {
+            url: 'http://localhost:8080/api/patient/sendVideoRequest/' + id,
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+        };
+        Axios(options)
+            .then(res => {
+                console.log(res);
+               
+            });
     }
 
     render() {
         return (
             <div className="container">
-               
+               <Button onClick={this.submitHandler}>Request for Video appointment</Button>
                    <div className="Panel">
-                    
+                   
                      <Card className="text-center">
   <Card.Header>Featured</Card.Header>
   <Card.Body>
