@@ -18,4 +18,8 @@ router.get("/getPrescription/:patientId", isAuth, doctorController.getPrescripti
 
 router.post("/addPrescription/:patientId", isAuth, doctorController.addPrescription);
 
+router.get("/checkRequest", isAuth, doctorController.checkRequest);
+
+router.post("/saveAppointments/:patientId", isAuth, doctorController.saveAppointments);
+
 module.exports = router;

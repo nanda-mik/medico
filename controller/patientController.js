@@ -184,3 +184,18 @@ exports.saveMonitorData = async (req, res, next) => {
         next(err);
     }
 }
+
+exports.sendVideoRequest = async (req, res, next) => {
+    const docId = req.params.doctorId;
+    const patientId = req.userId;
+    try{
+        const doctor = await Doctor.findById(docId);
+        doctor.appointment.push(patientId);
+        await doctor.save();
+        console.log("sent");
+        res.status(200).json({ message: "success" });
+    }catch(err){
+        console.log(err);
+        next(err);
+    }
+}

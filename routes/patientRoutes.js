@@ -18,4 +18,6 @@ router.get("/getPrescription/:doctorId", isAuth, patientController.getPrescripti
 
 router.post("/saveMonitorData", isAuth, patientController.saveMonitorData);
 
+router.get("/sendVideoRequest/:doctorId", isAuth, patientController.sendVideoRequest);
+
 module.exports = router;
