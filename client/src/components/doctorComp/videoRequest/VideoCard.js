@@ -17,16 +17,17 @@ class VideoCard extends React.Component {
     }
     submitHandler = (e) => {
         e.preventDefault();
+        const id = this.state.user.patient._id;
         const options = {
-          url: `${process.env.REACT_APP_LINK}/api/doctor/confirmVideoInvitation/`,
+          url: `${process.env.REACT_APP_LINK}/api/doctor/saveAppointments/`+ id,
           method: 'POST',
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('token'),
           },
           data: {
             title: "Video Appointment Session",
-            description: `You have a Video Appointment session with a patient ${this.props.user.name}`,
-            guestEmail: this.props.user.email,
+            description: `You have a Video Appointment session with a patient ${this.state.user.patient.name}`,
+            guestEmail: this.state.user.patient.email,
             startTime: this.state.startTime,
             endTime: this.state.endTime
           }
@@ -49,10 +50,9 @@ class VideoCard extends React.Component {
          ]
          let event = {
             title: "Video Appointment Session",
-            description: `You have a Video Appointment session with a patient ${this.props.user.name}`,
-            guestEmail: `${this.props.user.email}`,
-            startTime: `${this.state.startTime}:00-04:00`,
-            endTime: `${this.state.endTime}:00-04:00`
+            description: `You have a Video Appointment session with a patient ${this.state.user.patient.name}`,
+            startTime: `${this.state.startTime}:00+05:30`,
+            endTime: `${this.state.endTime}:00+05:30`
           };
          console.log(this.state.startTime);
          console.log(this.state.endTime);
@@ -61,10 +61,10 @@ class VideoCard extends React.Component {
                 <Card style={{ width: '20rem' }}>
                     <Card.Img variant="top" src="https://i.pinimg.com/564x/69/02/56/69025672dde3b9f5382bfb0f81270fe3.jpg" />
                     <Card.Body>
-                    <Card.Title>Request for Video Appointment by { this.state.user.name}</Card.Title>
+                    <Card.Title>Request for Video Appointment by { this.state.user.patient.name}</Card.Title>
                         <Card.Text>
                             I want a video session by you.
-                            My email : {this.state.user.email}
+                            My email : {this.state.user.patient.email}
                             <form noValidate>
                                 <TextField
                                      id="datetime-local"
