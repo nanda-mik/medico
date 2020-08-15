@@ -1,15 +1,15 @@
 .chatbot {
   /* float: right; */
-  right: 1%;
+  right: 2%;
   border-radius: 10px;
   z-index: 13;
-  height: 80px;
-  width: 80px;
-  bottom: 1%;
+  height: 120px;
+  width: 100px;
+  bottom: 2%;
   position: fixed;
   border-radius: 20px;
   margin-top: -80px;
-  background-image: url('bot.png');
+  background-image: url('docicon.png');
   background-size: contain;
   background-repeat: no-repeat;
   animation: dance 5s;
