@@ -1,12 +1,4 @@
-import React, { useEffect, useRef, useLayoutEffect, useState } from 'react';
-import {
-  GoogleMap,
-  withGoogleMap,
-  withScriptjs,
-  Marker,
-} from 'react-google-maps';
-import { useSelector } from 'react-redux';
-import { DeviceContext } from 'twilio/lib/rest/preview/deployed_devices/fleet/device';
+import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 

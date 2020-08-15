@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Styles from './diet.module.css';
 import { useSelector } from 'react-redux';
 
-import axios from 'axios';
+import Axios from 'axios';
 
 const Diet = () => {
   const [diet, setDiet] = useState();
   const state = useSelector((state) => state.diet.state);
   const getData = async () => {
     const options = {
-      url:`${process.env.REACT_APP_LINK}/api/diet/${state}`,
+      url: `${process.env.REACT_APP_LINK}/api/diet/${state}`,
       method: 'GET',
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token'),

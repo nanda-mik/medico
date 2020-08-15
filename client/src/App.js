@@ -416,7 +416,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        {/* <ErrorHandler error={this.state.error} onHandle={this.errorHandler} /> */}
+        <ErrorHandler error={this.state.error} onHandle={this.errorHandler} />
         <Location
           stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>

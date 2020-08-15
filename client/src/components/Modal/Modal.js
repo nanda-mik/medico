@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './Modal.css';
 
-const modal = props =>
+const modal = (props) =>
   ReactDOM.createPortal(
     <div className="modal">
       <header className="modal__header">
