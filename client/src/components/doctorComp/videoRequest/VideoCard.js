@@ -51,8 +51,8 @@ class VideoCard extends React.Component {
             title: "Video Appointment Session",
             description: `You have a Video Appointment session with a patient ${this.props.user.name}`,
             guestEmail: `${this.props.user.email}`,
-            startTime: `${this.state.startTime}:00-04:00`,
-            endTime: `${this.state.endTime}:00-04:00`
+            startTime: `${this.state.startTime}:00`,
+            endTime: `${this.state.endTime}:00`
           };
          console.log(this.state.startTime);
          console.log(this.state.endTime);
