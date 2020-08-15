@@ -190,7 +190,12 @@ exports.sendVideoRequest = async (req, res, next) => {
     const patientId = req.userId;
     try{
         const doctor = await Doctor.findById(docId);
-        doctor.appointment.push(patientId);
+        const d = new Date();
+        const obj = {
+            patientId: patientId,
+            date: d.toDateString()
+        };
+        doctor.appointment.push(obj);
         await doctor.save();
         console.log("sent");
         res.status(200).json({ message: "success" });
