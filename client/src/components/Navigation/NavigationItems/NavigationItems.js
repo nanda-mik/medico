@@ -77,6 +77,14 @@ const navItems = [
     isPatient: true,
     isDoc: false,
   },
+  {
+    id: 'hospitals',
+    text: 'Hospitals',
+    link: '/hospitals',
+    auth: true,
+    isPatient: true,
+    isDoc: false,
+  },
 
   {
     id: 'dashboard',

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import '@progress/kendo-theme-default/dist/all.css';
-// import '@progress/kendo-theme-material/dist/all.css';
-// import '@progress/kendo-theme-bootstrap/dist/all.css';
 import { Chat, ChatMessage } from '@progress/kendo-react-conversational-ui';
 import { IoIosClose } from 'react-icons/io';
 import Axios from 'axios';
@@ -69,7 +67,7 @@ const Chatbot = (props) => {
         right: props.show ? 0 : '-100%',
         bottom: 0,
         backgroundColor: 'white',
-        zIndex: 5,
+        zIndex: 15,
         display: 'flex',
         transitionDuration: props.show ? '0.3s' : '0s',
         flexDirection: 'column',
