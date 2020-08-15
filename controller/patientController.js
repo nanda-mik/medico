@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
 const Appointment = require('../models/appointments');
 
+
 const transporter = nodemailer.createTransport(
     sendgridTransport({
       auth: {
