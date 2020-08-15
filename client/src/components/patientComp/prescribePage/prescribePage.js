@@ -2,18 +2,21 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import PrescriptionList from '../prescriptionList/prescriptionList';
 import {Button } from 'react-bootstrap';
+import Spinner from "../../Spinner/Spinner";
 
 class prescribePage extends Component {
   constructor() {
     super();
     this.state = {
       data: [],
-      event: []
+      event: [],
+      loading: true
     };
   }
 
   componentDidMount() {
     const id = localStorage.getItem('docId');
+    this.setState({loading:true});
     console.log(id);
     const options = {
       url: `${process.env.REACT_APP_LINK}/api/patient/getPrescription/` + id,
@@ -23,7 +26,7 @@ class prescribePage extends Component {
       },
     };
     Axios(options).then((res) => {
-      this.setState({ data: res.data.arr, event: res.data.event });
+      this.setState({ data: res.data.arr, event: res.data.event, loading:false });
     });
   }
   submitHandler = (e) => {
@@ -60,6 +63,7 @@ class prescribePage extends Component {
           ) : (
             <h4>No prescriptions</h4>
           )}
+          {this.state.loading ? <Spinner /> : null}
         </div>
       </div>
     );

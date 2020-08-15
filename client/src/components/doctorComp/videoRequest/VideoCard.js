@@ -15,6 +15,7 @@ class VideoCard extends React.Component {
             disabled : false
         }
     }
+<<<<<<< HEAD
     submitHandler = (e) => {
         e.preventDefault();
         const id = this.state.user.patient._id;
@@ -40,6 +41,12 @@ class VideoCard extends React.Component {
         });
         
         this.setState({ disabled: true });
+=======
+    event = {
+        title: "Video Appointment Session",
+        description: `You have a Video Appointment session with a patient ${this.props.user.name}`,
+        guestEmail: `${this.props.user.patient.email}`
+>>>>>>> 378b24d1e724672f0720fed8da6a933e2176d87f
       };
   
      
@@ -48,6 +55,7 @@ class VideoCard extends React.Component {
         let items = [
             { google: 'Google' }
          ]
+<<<<<<< HEAD
          let event = {
             title: "Video Appointment Session",
             description: `You have a Video Appointment session with a patient ${this.state.user.patient.name}`,
@@ -57,6 +65,9 @@ class VideoCard extends React.Component {
           };
          console.log(this.state.startTime);
          console.log(this.state.endTime);
+=======
+         console.log(this.state.user);
+>>>>>>> 378b24d1e724672f0720fed8da6a933e2176d87f
         return(
             <div>
                 <Card style={{ width: '20rem' }}>
@@ -66,6 +77,7 @@ class VideoCard extends React.Component {
                         <Card.Text>
                             I want a video session by you.
                             My email : {this.state.user.patient.email}
+<<<<<<< HEAD
                             <form noValidate>
                                 <TextField
                                      id="datetime-local"
@@ -98,6 +110,13 @@ class VideoCard extends React.Component {
                             <Button disabled>Scheduled</Button>
                         }
                         
+=======
+                        </Card.Text>
+                        <Card.Text>
+                            Requested on {this.state.user.date}
+                        </Card.Text>
+                        <AddToCalender event={this.event} buttonTemplate={icon}  title="Generate event through calenders" listItems={items} buttonLabel="Schedule it on my calendar"/>
+>>>>>>> 378b24d1e724672f0720fed8da6a933e2176d87f
                     </Card.Body>
                     <Card.Footer className="text-muted">Requested on {this.state.user.date}</Card.Footer>
                 </Card>

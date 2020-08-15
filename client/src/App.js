@@ -421,14 +421,14 @@ class App extends Component {
 
     return (
       <Fragment>
-        {this.state.error && (
+        {(this.state.error)?(
           <div className="errorbox" style={myStyle}>
             <Alert variant="danger" onClose={() => this.errorHandler} dismissible>
               <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
               <p>Check Again!!</p>
             </Alert>
           </div>
-        )}
+        ):null}
         <Location
           stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>

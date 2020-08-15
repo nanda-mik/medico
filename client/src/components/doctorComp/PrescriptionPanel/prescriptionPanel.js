@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import UserCardlist from '../UserCardlist/userCardlist';
+import Spinner from "../../Spinner/Spinner";
 
 class prescription extends Component {
   constructor() {
     super();
     this.state = {
       patients: [],
+      loading: true
     };
   }
 
   componentDidMount() {
+    this.setState({loading:true});
     const options = {
       url: `${process.env.REACT_APP_LINK}/api/doctor/getPatients`,
       method: 'GET',
@@ -19,7 +22,7 @@ class prescription extends Component {
       },
     };
     Axios(options).then((res) => {
-      this.setState({ patients: res.data.arr });
+      this.setState({ patients: res.data.arr, loading: false });
     });
   }
 
@@ -34,6 +37,7 @@ class prescription extends Component {
         ) : (
           <h4>No patients</h4>
         )}
+        {this.state.loading ? <Spinner /> : null}
       </div>
     );
   }
