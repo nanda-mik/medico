@@ -8,9 +8,14 @@ const Diet = () => {
   const [diet, setDiet] = useState();
   const state = useSelector((state) => state.diet.state);
   const getData = async () => {
-    const res = await axios.get(
-      `${process.env.REACT_APP_LINK}/api/diet/${state}`
-    );
+    const options = {
+      url:`${process.env.REACT_APP_LINK}/api/diet/${state}`,
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('token'),
+      },
+    };
+    const res = await Axios(options);
     console.log(res.data.diet['sunday'], 'hello');
     setDiet(res.data.diet['sunday']);
   };
