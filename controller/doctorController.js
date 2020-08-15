@@ -178,8 +178,12 @@ exports.checkRequest = async(req, res, next) => {
         console.log(appointArr);
         var arr = [];
         for(let i=0;i<appointArr.length;i++){
-            const patient  = await Patient.findById(appointArr[i]);
-            arr.push(patient);
+            const patient  = await Patient.findById(appointArr[i].patientId);
+            const obj = {
+                patient:patient,
+                date: appointArr[i].date
+            }
+            arr.push(obj);
         }
         console.log(arr);
         res.status(200).json({message: "success", arr: arr});
@@ -200,6 +204,9 @@ exports.saveAppointments = async(req, res, next) => {
             doctorId: id
         });
         await appointment.save();
+        const doctor = await Doctor.findById(id);
+        doctor.appointment.pop();
+        await doctor.save();
         res.status(201).json({message: 'success'});
     }catch(err){
         console.log(err);
