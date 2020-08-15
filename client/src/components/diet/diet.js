@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Styles from './diet.module.css';
 import { useSelector } from 'react-redux';
 
-import axios from 'axios';
+import Axios from 'axios';
 
 const Diet = () => {
   const [diet, setDiet] = useState();

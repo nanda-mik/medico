@@ -11,7 +11,7 @@ import PatientSignup from './components/signupForm/patientSignup';
 import DocLogin from './components/loginForm/docLogin';
 import PatientLogin from './components/loginForm/patientLogin';
 
-import ErrorHandler from './components/ErrorHandler/ErrorHandler';
+import Alert from 'react-bootstrap/Alert';
 import Layout from './components/Layout/Layout';
 import Toolbar from './components/Toolbar/Toolbar';
 import MainNavigation from './components/Navigation/MainNavigation/MainNavigation';
@@ -414,9 +414,21 @@ class App extends Component {
       );
     }
 
+    const myStyle = {
+      padding: "10px",
+      marginTop: "10vh"
+    };
+
     return (
       <Fragment>
-        {/* <ErrorHandler error={this.state.error} onHandle={this.errorHandler} /> */}
+        {this.state.error && (
+          <div className="errorbox" style={myStyle}>
+            <Alert variant="danger" onClose={() => this.errorHandler} dismissible>
+              <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+              <p>Check Again!!</p>
+            </Alert>
+          </div>
+        )}
         <Location
           stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>
