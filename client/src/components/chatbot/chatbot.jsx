@@ -14,7 +14,7 @@ const Chatbot = (props) => {
   const bot = {
     id: 0,
     avatarUrl:
-      'https://www.filmibeat.com/img/popcorn/profile_photos/rashmika-mandanna-20190705125340-37195.jpg',
+      'https://www.myhealthrecord.gov.au/sites/default/files/styles/large/public/docicon.png?itok=b99yS3DK',
   };
   const [messages, setMessages] = useState([
     {
@@ -84,7 +84,7 @@ const Chatbot = (props) => {
       >
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <img
-            src="https://www.filmibeat.com/img/popcorn/profile_photos/rashmika-mandanna-20190705125340-37195.jpg"
+            src="https://www.myhealthrecord.gov.au/sites/default/files/styles/large/public/docicon.png?itok=b99yS3DK"
             style={{
               width: '70px',
               height: '70px',
