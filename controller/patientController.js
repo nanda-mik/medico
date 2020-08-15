@@ -5,6 +5,7 @@ const Prescription = require('../models/prescription');
 const Monitor = require('../models/monitorData');
 const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
+const Appointment = require('../models/appointments');
 
 const transporter = nodemailer.createTransport(
     sendgridTransport({
@@ -139,12 +140,18 @@ exports.getPrescription = async (req, res, next) => {
         const relationId = result._id;
         const resData = await Prescription.findOne({ relationId: relationId });
         var arr = [];
+        var event = [];
+        const eventData = await Appointment.find({patientId: id});
+        if(eventData){
+            event = eventData;
+            console.log(event);
+        }
         if (resData) {
             arr = resData.data;
             console.log(arr);
-            res.status(200).json({ message: "success", arr: arr });
+            res.status(200).json({ message: "success", arr: arr, event: event });
         } else {
-            res.status(200).json({ message: "success", arr: arr });
+            res.status(200).json({ message: "success", arr: arr, event: event });
         }
     } catch (err) {
         console.log(err);

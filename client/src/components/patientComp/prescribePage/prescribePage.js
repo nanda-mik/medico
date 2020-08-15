@@ -8,6 +8,7 @@ class prescribePage extends Component {
     super();
     this.state = {
       data: [],
+      event: []
     };
   }
 
@@ -22,7 +23,7 @@ class prescribePage extends Component {
       },
     };
     Axios(options).then((res) => {
-      this.setState({ data: res.data.arr });
+      this.setState({ data: res.data.arr, event: res.data.event });
     });
   }
   submitHandler = (e) => {
@@ -48,6 +49,7 @@ class prescribePage extends Component {
   render() {
     const data = this.state.data;
     console.log(data);
+    console.log(this.state.event);
     return (
       <div>
         <h3>Prescriptions</h3>

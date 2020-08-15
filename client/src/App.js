@@ -11,7 +11,7 @@ import PatientSignup from './components/signupForm/patientSignup';
 import DocLogin from './components/loginForm/docLogin';
 import PatientLogin from './components/loginForm/patientLogin';
 
-import ErrorHandler from './components/ErrorHandler/ErrorHandler';
+import Alert from 'react-bootstrap/Alert';
 import Layout from './components/Layout/Layout';
 import Toolbar from './components/Toolbar/Toolbar';
 import MainNavigation from './components/Navigation/MainNavigation/MainNavigation';
@@ -35,6 +35,7 @@ import PatientPrescriptionPanel from './components/patientComp/prescriptionPanel
 import PatientPrescribePage from './components/patientComp/prescribePage/prescribePage';
 import ChatButton from './components/chatButton/chatButton';
 import ChatBot from './components/chatbot/chatbot';
+import Map from './components/map/map';
 
 import Axios from 'axios';
 import MonitorPat from './components/patientComp/MonitorPat/MonitorPat';
@@ -71,7 +72,6 @@ class App extends Component {
     }
     const userId = localStorage.getItem('userId');
 
-   
     if (type === 'doc') {
       this.setState({
         isDoc: true,
@@ -86,7 +86,6 @@ class App extends Component {
         token: token,
         userId: userId,
       });
-
     }
     const remainingMilliseconds =
       new Date(expiryDate).getTime() - new Date().getTime();
@@ -219,7 +218,7 @@ class App extends Component {
 
   patientSignupHandler = (event, authData) => {
     event.preventDefault();
-        const options = {
+    const options = {
       url: `${process.env.REACT_APP_LINK}/api/auth/patientSignup`,
       method: 'PUT',
       headers: {
@@ -350,8 +349,8 @@ class App extends Component {
         <Redirect to="/" />
       </Switch>
     );
-    if(this.state.isAuth && this.state.isDoc){
-      redirectm =  <Redirect to ="/"/>;
+    if (this.state.isAuth && this.state.isDoc) {
+      redirectm = <Redirect to="/" />;
       routes = (
         <Switch>
           <Route exact path="/">
@@ -370,17 +369,16 @@ class App extends Component {
             <PrescribePage />
           </Route>
           <Route exact path="/videodoctorPanel">
-            <VideoRequest/>
+            <VideoRequest />
           </Route>
-          <Route path = "/patientProfile/:id"
-          render = {(props) => (
-         <InvProfile {...props}/>
-         )}/>
-          <Route 
-          path = "/details/:id"
-          render = {(props) => (
-            <PatientMonitored {...props}/>
-          )}/>
+          <Route
+            path="/patientProfile/:id"
+            render={(props) => <InvProfile {...props} />}
+          />
+          <Route
+            path="/details/:id"
+            render={(props) => <PatientMonitored {...props} />}
+          />
         </Switch>
       );
     }
@@ -409,13 +407,28 @@ class App extends Component {
           <Route exact path="/diet">
             <Diet />
           </Route>
+          <Route exact path="/hospitals">
+            <Map />
+          </Route>
         </Switch>
       );
     }
 
+    const myStyle = {
+      padding: "10px",
+      marginTop: "10vh"
+    };
+
     return (
       <Fragment>
-        {/* <ErrorHandler error={this.state.error} onHandle={this.errorHandler} /> */}
+        {this.state.error && (
+          <div className="errorbox" style={myStyle}>
+            <Alert variant="danger" onClose={() => this.errorHandler} dismissible>
+              <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+              <p>Check Again!!</p>
+            </Alert>
+          </div>
+        )}
         <Location
           stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setState } from '../../Redux/Diet/action';
+import { setState, setPosition } from '../../Redux/Diet/action';
 const Location = (props) => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -8,6 +8,7 @@ const Location = (props) => {
       navigator.geolocation.getCurrentPosition(function (position) {
         console.log('Latitude is :', position.coords.latitude);
         console.log('Longitude is :', position.coords.longitude);
+        dispatch(setPosition(position));
         console.log(position);
         const myLat = position.coords.latitude;
         const myLon = position.coords.longitude;
