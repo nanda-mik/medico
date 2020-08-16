@@ -1,6 +1,32 @@
 {
   "odisha": {
-    "sunday": {
+    "tuesday": {
+      "calories": {
+        "amount": 2250,
+        "percentages": {
+          "carbohydrate": 55,
+          "fat": 20,
+          "protein": 25,
+          "fiber": "34 grams"
+        }
+      },
+      "breakfast": [
+        "1 banana and some dates",
+        "Two slices whole-grain Chappati with milk",
+        "One cup of black herbal tea(tulsi)"
+      ],
+      "lunch": [
+        "50gm Mix salad consists of cucumber, tomato, onion and carrot",
+        "150gm brown rice with dal",
+        "Glass of water"
+      ],
+      "dinner": [
+        "2 piece chappati with mix vegetable curry",
+        "One glass milk",
+        "dry nuts"
+      ]
+    },
+    "wednesday": {
       "calories": {
         "amount": 2250,
         "percentages": {
@@ -11,25 +37,44 @@
         }
       },
       "breakfast": [
-        "One grapefruit Two poached eggs (or fried in a non-stick pan)",
-        "Two slices whole-grain toast with one pat butter each One cup low-fat milk",
-        " One cup of black coffee or herbal tea",
-        "(Macronutrients: approximately 555 calories with 27 grams protein, 63 grams carbohydrates, and 23 grams fat)"
+        "2 piece bread and egg white",
+        "1 glass milk",
+        "30gm dry fruits"
       ],
       "lunch": [
-        "Chicken breast (6-ounce portion), baked or roasted (not breaded or fried)",
-        "Large garden salad with tomato and onion with one cup croutons, topped with one tablespoon oil and vinegar (or salad dressing)",
-        "Glass of water ",
-        "(Macronutrients: 425 calories, 44 grams protein, 37 grams carbohydrates, 9 grams fat)"
+        "White Rice(300gm) and Chicken breast or 200gm paneer",
+        "Mix vegetable Salad",
+        "Fry or curry"
       ],
       "dinner": [
-        "One cup steamed broccoli",
-        "One cup of brown rice",
-        "Halibut (four-ounce portion)",
-        "Small garden salad with one cup spinach leaves, tomato, and onion topped with two tablespoons oil and vinegar or salad dressing",
-        "One glass white wine (regular or dealcoholized)",
-        "Sparkling water with lemon or lime slice",
-        "(646 calories, 42 grams protein, 77 grams carbohydrates, 8 grams fat)"
+        "one glass milk",
+        "2 piece chicken leg",
+        "Hot vegetable curry"
+      ]
+    },
+    "thursday": {
+      "calories": {
+        "amount": 2250,
+        "percentages": {
+          "carobhydrate": 55,
+          "fat": 20,
+          "protein": 25,
+          "fiber": "34 grams"
+        }
+      },
+      "breakfast": [
+        "2 banana and some nuts",
+        "150gm oat meal",
+        " One cup of black herbal tea(tulsi)"
+      ],
+      "lunch": [
+        "Pakhala with curd.",
+        "150gm aloo bharta and 50gm spinach"
+      ],
+      "dinner": [
+        "one glass milk",
+        "4 or 5 cashew nuts",
+        "vermicelli upma 100gm"
       ]
     }
   }

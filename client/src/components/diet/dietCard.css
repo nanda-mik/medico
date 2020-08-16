@@ -1,0 +1,8 @@
+.diet-card{
+    margin-left: 50vh;
+}
+
+.food-diet{
+    display: flex;
+    flex-direction: row;
+}
