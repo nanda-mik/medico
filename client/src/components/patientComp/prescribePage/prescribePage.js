@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import PrescriptionList from '../prescriptionList/prescriptionList';
-import {Button } from 'react-bootstrap';
+import {Button,Form } from 'react-bootstrap';
+import './prescribePage.css';
 import Spinner from "../../Spinner/Spinner";
+
 
 class prescribePage extends Component {
   constructor() {
@@ -10,7 +12,9 @@ class prescribePage extends Component {
     this.state = {
       data: [],
       event: [],
+      prescribe : "",
       loading: true
+
     };
   }
 
@@ -28,6 +32,13 @@ class prescribePage extends Component {
     Axios(options).then((res) => {
       this.setState({ data: res.data.arr, event: res.data.event, loading:false });
     });
+  }
+  sendHandler = (e) => {
+    e.preventDefault();
+    let data = {
+      patientProblem : this.state.prescribe
+    }
+    console.log(data);
   }
   submitHandler = (e) => {
     e.preventDefault();
@@ -54,7 +65,7 @@ class prescribePage extends Component {
     console.log(data);
     console.log(this.state.event);
     return (
-      <div>
+      <div className="Prescription">
         <h3>Prescriptions</h3>
         <Button onClick={this.submitHandler}>Request for Video appointment</Button> 
         <div>
@@ -64,6 +75,36 @@ class prescribePage extends Component {
             <h4>No prescriptions</h4>
           )}
           {this.state.loading ? <Spinner /> : null}
+        </div>
+        <div className="Patient">
+        <Form>
+          <Form.Group controlId="prescribe">
+            <Form.Label>Have some problems ? Say it to your doctor</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows="3"
+              required
+              autoFocus
+              type="text"
+              value={this.state.prescribe}
+              onChange={(e) => this.setState({ prescribe: e.target.value })}
+              
+            ></Form.Control>
+          </Form.Group>
+
+          <Button
+            variant="success"
+            type="submit"
+            style={{
+              border: 'none',
+              borderRadius: '30px',
+              padding: '10px 40px',
+            }}
+            onClick = {this.sendHandler}
+          >
+            Send to your doctor
+          </Button>
+        </Form>
         </div>
       </div>
     );
