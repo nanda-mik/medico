@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import PrescriptionList from '../prescriptionList/prescriptionList';
-import {Button,Form } from 'react-bootstrap';
+import {Button,Form,Card } from 'react-bootstrap';
 import './prescribePage.css';
 
 class prescribePage extends Component {
@@ -10,7 +10,8 @@ class prescribePage extends Component {
     this.state = {
       data: [],
       event: [],
-      prescribe : ""
+      prescribe : "",
+      req: false
     };
   }
 
@@ -25,6 +26,7 @@ class prescribePage extends Component {
       },
     };
     Axios(options).then((res) => {
+      console.log(res);
       this.setState({ data: res.data.arr, event: res.data.event });
     });
   }
@@ -51,18 +53,66 @@ class prescribePage extends Component {
     Axios(options)
         .then(res => {
             console.log(res);
-
+            this.setState({req:true});
   
         });
 }
   render() {
+    var d = new Date();
+    let count = 0;
     const data = this.state.data;
+    const event = this.state.event;
     console.log(data);
     console.log(this.state.event);
     return (
       <div className="Prescription">
         <h3>Prescriptions</h3>
-        <Button onClick={this.submitHandler}>Request for Video appointment</Button> 
+        {
+        (event.length > 0) ? 
+        
+          this.state.event.map((ev) => {
+            const s = new Date(ev.event.startTime);
+            const u = s.getTime()-d.getTime()
+            if(u > 0 ){
+              console.log("done");
+              return (
+                <div className="Event">
+                  <Card
+          
+          key='Success'
+          bg="success"
+          style={{ width: '18rem' }}
+          className="mb-2"
+        >
+          <Card.Header>Your video Appointment</Card.Header>
+          <Card.Body>
+            <Card.Title>Event time for your appointment with doctor</Card.Title>
+            <Card.Text>
+              Your Video appointment is Scheduled at {ev.event.startTime}. For meeting details check the registered email .
+            </Card.Text>
+          </Card.Body>
+        </Card>
+                count=count+1;
+                </div>
+              );
+            }
+            
+          }) :
+          <div>
+          {
+            this.state.req ? <Button disabled>Request sent</Button> : <Button variant="outline-success" onClick={this.submitHandler} style={{ borderRadius: '30px',
+            padding: '10px 40px'}} >Request for Video appointment</Button> 
+          }
+          </div>
+  }
+  {
+    count === 1  ? null :  
+      this.state.req ? <Button  variant="outline-success" style={{ borderRadius: '30px',
+      padding: '10px 40px'}}  disabled>Request sent</Button> : <Button 
+      variant="outline-success" onClick={this.submitHandler} style={{ borderRadius: '30px',
+      padding: '10px 40px'}} >Request for Video appointment</Button> 
+    
+  }
         <div>
           {data.length !== 0 ? (
             <PrescriptionList list={data} />

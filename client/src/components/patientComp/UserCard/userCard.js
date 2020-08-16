@@ -12,6 +12,7 @@ class Cards extends Component {
     this.state = {
       redirect: false,
       redirectToPrescribePage: false,
+      req: false
     };
   }
 
@@ -27,7 +28,7 @@ class Cards extends Component {
     };
     Axios(options).then((res) => {
       console.log(res);
-      this.setState({ redirect: true });
+      this.setState({ req: true });
     });
   };
 
@@ -51,6 +52,15 @@ class Cards extends Component {
     if (this.state.redirectToPrescribePage) {
       redirect = <Redirect to="/prescribePage" />;
     }
+    let req = null;
+    if(this.state.req){
+      req=<Button disabled>Requested</Button>
+    }
+    else{
+      req=<Button onClick={this.submitHandler}>
+      Request for apointment
+    </Button>
+    }
     return (
       <div>
         <div>
@@ -73,9 +83,9 @@ class Cards extends Component {
                 {this.props.user.yearOfExp} years of experiance.
               </Card.Text>
               {this.props.isReq ? (
-                <Button onClick={this.submitHandler}>
-                  Request for apointment
-                </Button>
+                this.state.req ? <Button disabled>Requested</Button> : <Button onClick={this.submitHandler}>
+                Request for apointment
+              </Button>
               ) : (
                 <div>
                   <Button onClick={this.onClick}>Prescription Page</Button>

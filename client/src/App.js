@@ -423,7 +423,7 @@ class App extends Component {
       <Fragment>
         {this.state.error && (
           <div className="errorbox" style={myStyle}>
-            <Alert variant="danger" onClose={() => this.errorHandler} dismissible>
+            <Alert variant="danger" onClose={this.errorHandler} dismissible>
               <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
               <p>Check Again!!</p>
             </Alert>
