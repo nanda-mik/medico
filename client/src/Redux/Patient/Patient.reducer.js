@@ -29,12 +29,12 @@ const PatientReducer = (state = INITIAL_STATE , action) => {
         case PatientActions.SET_BLOODPRESSURE :
             return {
                 ...state,
-                bloodpressure : [...state.bloodpressure , action.payload]
+                bloodpressure : action.payload
             }
         case PatientActions.SET_DIABETES :
             return {
                 ...state,
-                diabetes : [...state.diabetes , action.payload]
+                diabetes : action.payload
             }
         case PatientActions.SET_MEDICINES :
             return {
@@ -44,17 +44,17 @@ const PatientReducer = (state = INITIAL_STATE , action) => {
         case PatientActions.SET_PULSE :
             return{
                 ...state,
-                pulse : [...state.pulse , action.payload]
+                pulse : action.payload
             }
         case PatientActions.SET_CAL :
             return {
                 ...state,
-                cal : [...state.cal , action.payload]
+                cal : action.payload
             }
         case PatientActions.SET_COVID :
             return {
                 ...state,
-                covid : [...state.covid , action.payload]
+                covid : action.payload
             }
         case PatientActions.SET_COVID_TRACKER : 
         return{
