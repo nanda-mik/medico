@@ -54,30 +54,29 @@ class Pdashboard extends Component {
         console.log(monitors.bloodpressure);
 
         if (this.props.bloodpressure.length !== monitors.bloodpressure.length) {
-          monitors.bloodpressure.map((bp) => {
-            this.props.setBloodpressure(bp);
-          });
+          
+            this.props.setBloodpressure(monitors.bloodpressure);
+       
         }
 
         if (this.props.diabetes.length !== monitors.diabetes.length) {
-          monitors.diabetes.map((db) => {
-            this.props.setDiabetes(db);
-          });
+         
+            this.props.setDiabetes(monitors.diabetes);
+          
         }
         if (this.props.pulse.length !== monitors.pulse.length) {
-          monitors.pulse.map((p) => {
-            this.props.setPulse(p);
-          });
+          
+            this.props.setPulse(monitors.pulse);
+          
         }
         if (this.props.covid.length !== monitors.covid.length) {
-          monitors.covid.map((cov) => {
-            this.props.setCovid(cov);
-          });
+          
+            this.props.setCovid(monitors.covid);
         }
         if (this.props.cal.length !== monitors.calories.length) {
-          monitors.calories.map((cal) => {
-            this.props.setCal(cal);
-          });
+          
+            this.props.setCal(monitors.calories);
+          
         }
         this.props.covid.map((cov) => {
           let c = 0;
