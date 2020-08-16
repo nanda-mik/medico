@@ -444,6 +444,9 @@ class App extends Component {
             </Alert>
           </div>
         ):null}
+        {routes}
+        {redirectm}
+        {redirectu}
           <ChatButton
             show={!this.state.chat}
             clickHandler={() => {
@@ -456,9 +459,6 @@ class App extends Component {
             clickHandler={() => this.setState({ chat: false })}
           />
         </Layout>
-        {routes}
-        {redirectm}
-        {redirectu}
       </Fragment>
     );
   }

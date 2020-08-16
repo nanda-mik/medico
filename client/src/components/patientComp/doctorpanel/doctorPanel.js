@@ -4,6 +4,7 @@ import Axios from 'axios';
 import { SearchBox } from '../search-box/search-box';
 import Spinner from "../../Spinner/Spinner";
 
+
 class Main extends Component {
   constructor() {
     super();
@@ -15,7 +16,7 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    this.setState({loading:true});
+    this.setState({ loading: true });
     const options = {
       url: `${process.env.REACT_APP_LINK}/api/patient/getDoctors`,
       method: 'GET',
@@ -42,15 +43,17 @@ class Main extends Component {
     return (
       <Fragment>
         <h1>Doctors</h1>
-        <SearchBox
-          placeholder="search doctors"
-          handleChange={this.handleChange}
-        />
+        <div>
+          <SearchBox
+            placeholder="search doctors"
+            handleChange={this.handleChange}
+          />  
+        </div>
         {this.state.users.length !== 0 ? (
           <UserCardlist isReq={true} users={fusers} />
         ) : (
-          <h2>No Doctors.</h2>
-        )}
+            <h2>No Doctors.</h2>
+          )}
         {this.state.loading ? <Spinner /> : null}
       </Fragment>
     );
