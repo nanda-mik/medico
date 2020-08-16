@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import UserCardlist from '../UserCardlist/userCardlist';
 import Axios from 'axios';
 import { SearchBox } from '../search-box/search-box';
+import Spinner from "../../Spinner/Spinner";
 
 class Main extends Component {
   constructor() {
@@ -9,10 +10,12 @@ class Main extends Component {
     this.state = {
       users: [],
       searchField: '',
+      loading: true
     };
   }
 
   componentDidMount() {
+    this.setState({loading:true});
     const options = {
       url: `${process.env.REACT_APP_LINK}/api/patient/getDoctors`,
       method: 'GET',
@@ -22,8 +25,7 @@ class Main extends Component {
     };
     Axios(options).then((res) => {
       console.log(res.data.users);
-
-      this.setState({ users: res.data.users });
+      this.setState({ users: res.data.users, loading: false });
     });
   }
 
@@ -49,6 +51,7 @@ class Main extends Component {
         ) : (
           <h2>No Doctors.</h2>
         )}
+        {this.state.loading ? <Spinner /> : null}
       </Fragment>
     );
   }

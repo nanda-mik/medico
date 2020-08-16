@@ -122,13 +122,15 @@ exports.getPrescription = async(req, res, next) => {
         const result = await Relation.findOne({doctorId: id, patientId: patId});
         const relationId = result._id;
         const resData = await Prescription.findOne({relationId: relationId});
-        var arr = [];
+        var prescArr = [];
+        var problemArr = [];
         if(resData){
-            arr = resData.data;
-            console.log(arr);
-            res.status(200).json({message: "success", arr: arr});
+            prescArr = resData.data;
+            problemArr = resData.problem;
+            console.log(prescArr,'\n',problemArr);
+            res.status(200).json({message: "success", prescArr: prescArr, problemArr: problemArr});
         }else{
-            res.status(200).json({message: "success", arr: arr});
+            res.status(200).json({message: "success", prescArr: prescArr, problemArr: problemArr});
         }
     }catch(err){
         console.log(err);
@@ -163,7 +165,8 @@ exports.addPrescription = async(req, res, next) => {
             const resu = await prescription.save();
             console.log(resu);
         }
-        res.status(200).json({message: "success"});
+        const arr = await Prescription.find();
+        res.status(200).json({message: "success", arr: arr});
     }catch(err){
         console.log(err);
         next(err);

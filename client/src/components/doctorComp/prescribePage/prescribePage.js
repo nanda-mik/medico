@@ -31,8 +31,8 @@ class prescribePage extends Component {
       },
     };
     Axios(options).then((res) => {
-      console.log(res.data.arr);
-      this.setState({ data: res.data.arr });
+      console.log(res.data);
+      this.setState({ data: res.data.prescArr });
       this.setState({ prescriptionId: res.data.prescriptionId });
     });
   }
@@ -53,8 +53,8 @@ class prescribePage extends Component {
       },
       data: {
         prescribed: this.state.prescribe,
-        time: time,
-      },
+        time: time
+      }
     };
     Axios(options)
       .then((resData) => {

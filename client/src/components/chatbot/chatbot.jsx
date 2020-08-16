@@ -62,7 +62,7 @@ const Chatbot = (props) => {
   return (
     <div
       style={{
-        height: '100%',
+        height: '85%',
         position: 'fixed',
         right: props.show ? 0 : '-100%',
         bottom: 0,
