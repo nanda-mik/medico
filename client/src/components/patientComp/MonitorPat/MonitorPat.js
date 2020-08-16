@@ -45,6 +45,11 @@ class MonitorPatient extends Component {
         date: new Date().toDateString(),
       },
       redirect: false,
+      bloodpressurearr : [],
+      diabetesarr : [],
+      covidarr : [],
+      pulsearr : [],
+      caloriesarr : []
     };
   }
   bphandler = (e) => {
@@ -55,33 +60,63 @@ class MonitorPatient extends Component {
       bloodpressure: { ...this.state.bloodpressure, date: time },
     });
     console.log(this.state.bloodpressure);
-    this.props.setBloodpressure(this.state.bloodpressure);
+    this.setState(state => {
+      
+      return {
+        bloodpressurearr :  [...state.bloodpressurearr , state.bloodpressure],
+        bloodpressure : {...state.bloodpressure ,  diastolic: '', systolic: '', date: new Date().toDateString()}
+      }
+    })
+
   };
   dhandler = (e) => {
     e.preventDefault();
-    var d = new Date();
-    var time = d.toLocaleString();
-    console.log(d);
-    this.setState({ diabetes: { ...this.state.diabetes, date: time } });
-    this.props.setDiabetes(this.state.diabetes);
+    
+    this.setState(state => {
+      
+      return {
+        diabetesarr :  [...state.diabetesarr , state.diabetes],
+        diabetes : {...state.diabetes ,  typeA: '', typeB: '', date: new Date().toDateString()}
+      }
+    })
   };
   cvhandler = (e) => {
-    e.preventDefault();
-    var d = new Date();
-    var time = d.toLocaleString();
-    this.setState({ covid: { ...this.state.covid, date: time } });
-    this.props.setCovid(this.state.covid);
+  e.preventDefault();
+    this.setState(state => {
+      
+      return {
+        covidarr :  [...state.covidarr , state.covid],
+        covid : {...state.covid ,   cough: false,
+          fever: false,
+          tastebuds: false,
+          dryThroat: false,
+          appetite: false,
+          date: new Date().toDateString(),}
+      }
+    })
   };
   phandler = (e) => {
     e.preventDefault();
-    this.props.setPulse(this.state.pulserate);
+    this.setState(state => {
+      
+      return {
+        pulsearr :  [...state.pulsearr , state.pulserate],
+        pulserate : {...state.pulserate ,  pulse : '', date: new Date().toDateString()}
+      }
+    })
   };
   chandler = (e) => {
     e.preventDefault();
-    this.props.setCal(this.state.calories);
+    this.setState(state => {
+      
+      return {
+        caloriesarr :  [...state.caloriesarr , state.calories],
+        calories : {...state.calories ,  calorie : '', date: new Date().toDateString()}
+      }
+    })
   };
   submitHandler = (e) => {
-    console.log(this.props.bloodpressure);
+    
     e.preventDefault();
     const options = {
       url: `${process.env.REACT_APP_LINK}/api/patient/saveMonitorData`,
@@ -92,11 +127,11 @@ class MonitorPatient extends Component {
         Authorization: 'Bearer ' + localStorage.getItem('token'),
       },
       data: {
-        bloodpressure: this.props.bloodpressure,
-        diabetes: this.props.diabetes,
-        covid: this.props.covid,
-        calories: this.props.cal,
-        pulse: this.props.pulse,
+        bloodpressure: this.state.bloodpressurearr,
+        diabetes: this.state.diabetesarr,
+        covid: this.state.covidarr,
+        calories: this.state.caloriesarr,
+        pulse: this.state.pulsearr,
       },
     };
     Axios(options)
@@ -115,12 +150,19 @@ class MonitorPatient extends Component {
           redirect: false,
         });
       });
+      console.log(this.props.bloodpressure);
+    this.props.setBloodpressure(this.state.bloodpressurearr);
+    this.props.setDiabetes(this.state.diabetesarr);
+    this.props.setCovid(this.state.covidarr);
+    this.props.setPulse(this.state.pulsearr);
+    this.props.setCal(this.state.caloriesarr);
   };
   render() {
     let redirect = null;
     if (this.state.redirect) {
       redirect = <Redirect to="/" />;
     }
+    console.log(this.state.bloodpressurearr);
     return (
       <div className="column">
         <div className="row">

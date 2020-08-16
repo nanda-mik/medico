@@ -146,11 +146,12 @@ class prescribePage extends Component {
 
   {
     
-    count >= 1  ? null :  
-      this.state.req ? <Button  variant="outline-success" style={{ borderRadius: '30px',
-      padding: '10px 40px'}}  disabled>Request sent</Button> : <Button 
-      variant="outline-success" onClick={this.submitHandler} style={{ borderRadius: '30px',
-      padding: '10px 40px'}} >Request for Video appointment</Button> 
+    count === 0 && event.length > 0 ? this.state.req ? <Button  variant="outline-success" style={{ borderRadius: '30px',
+    padding: '10px 40px'}}  disabled>Request sent</Button> : <Button 
+    variant="outline-success" onClick={this.submitHandler} style={{ borderRadius: '30px',
+    padding: '10px 40px'}} >Request for Video appointment</Button>  :  
+    null
+      
     
   }
 
