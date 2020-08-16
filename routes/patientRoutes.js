@@ -16,6 +16,8 @@ router.get("/getAppointedDoctors", isAuth, patientController.getAppointedDoctors
 
 router.get("/getPrescription/:doctorId", isAuth, patientController.getPrescription);
 
+router.post("/sendProblem/:doctorId", isAuth, patientController.sendProblem);
+
 router.post("/saveMonitorData", isAuth, patientController.saveMonitorData);
 
 router.get("/sendVideoRequest/:doctorId", isAuth, patientController.sendVideoRequest);

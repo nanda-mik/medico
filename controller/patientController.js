@@ -140,7 +140,8 @@ exports.getPrescription = async (req, res, next) => {
         const result = await Relation.findOne({ doctorId: docId, patientId: id });
         const relationId = result._id;
         const resData = await Prescription.findOne({ relationId: relationId });
-        var arr = [];
+        var prescArr = [];
+        var problemArr = [];
         var event = [];
         const eventData = await Appointment.find({patientId: id});
         if(eventData){
@@ -148,15 +149,50 @@ exports.getPrescription = async (req, res, next) => {
             console.log(event);
         }
         if (resData) {
-            arr = resData.data;
-            console.log(arr);
-            res.status(200).json({ message: "success", arr: arr, event: event });
+            prescArr = resData.data;
+            problemArr = resData.problem;
+            console.log(prescArr,'\n',problemArr);
+            res.status(200).json({ message: "success", prescArr: prescArr, problemArr: problemArr, event: event });
         } else {
-            res.status(200).json({ message: "success", arr: arr, event: event });
+            res.status(200).json({ message: "success", prescArr: prescArr, problemArr:problemArr, event: event });
         }
     } catch (err) {
         console.log(err);
         next(err);
+    }
+}
+
+exports.sendProblem = async (req, res, next) => {
+    const id = req.userId;
+    const docId = req.params.doctorId;
+    try{
+        const result = await Relation.findOne({doctorId: docId, patientId: id});
+        const relationId = result._id;
+        const problem = req.body.problem;
+        const time = req.body.time;
+        const presc = await Prescription.findOne({relationId: relationId});
+        if(presc){
+            presc.problem.push({
+                problemData: problem,
+                time: time
+            });
+            const resu = await presc.save();
+            console.log(resu);
+        }else{
+            const prescription = new Prescription({
+                relationId: relationId,
+                problem: {
+                    problemData: problem,
+                    time: time
+                }
+            });
+            const resu = await prescription.save();
+            console.log(resu);
+        }
+        const arr = await Prescription.findOne({relationId: relationId});
+        res.status(200).json({message: "success", arr: arr});
+    }catch(err){
+
     }
 }
 

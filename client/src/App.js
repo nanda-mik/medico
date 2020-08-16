@@ -415,20 +415,12 @@ class App extends Component {
     }
 
     const myStyle = {
-      padding: "10px",
-      marginTop: "10vh"
+      marginLeft: "7vh",
+      marginRight: "5vh"
     };
 
     return (
       <Fragment>
-        {(this.state.error)?(
-          <div className="errorbox" style={myStyle}>
-            <Alert variant="danger" onClose={() => this.errorHandler} dismissible>
-              <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-              <p>Check Again!!</p>
-            </Alert>
-          </div>
-        ):null}
         <Location
           stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>
@@ -444,6 +436,14 @@ class App extends Component {
             </Toolbar>
           }
         >
+          {(this.state.error)?(
+          <div className="errorbox" style={myStyle}>
+            <Alert variant="danger" onClose={this.errorHandler} dismissible>
+              <Alert.Heading>You got an error!</Alert.Heading>
+              <p>Check Your Credentials Again!!</p>
+            </Alert>
+          </div>
+        ):null}
           <ChatButton
             show={!this.state.chat}
             clickHandler={() => {
