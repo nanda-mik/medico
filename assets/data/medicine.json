@@ -63,7 +63,7 @@
                 "Contact": "12345678"
             } 
         },
-        "BP Control":{
+        "Sudden BP Control":{
             "medicine":["Telvas 40"],
             "doctor":{
                 "name": "Dr. Indira Roy",
