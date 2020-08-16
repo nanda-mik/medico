@@ -33,13 +33,17 @@ class VideoRequest extends Component{
         return(
             <div>
                 {
+                    (datas.length>0)?
                     datas.map((data) => {
+                        if(data.patient!==null){
                         return(
                             <div>
                         <VideoCard user={data}/>
                         </div>
                         );
-                    })
+                        }
+                    }):
+                    <h2>No video appointments</h2>
                 }
                   {/*<Card style={{ width: '18rem' }}>
 <Card.Img variant="top" src="https://i.pinimg.com/564x/69/02/56/69025672dde3b9f5382bfb0f81270fe3.jpg" />
