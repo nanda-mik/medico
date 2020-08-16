@@ -35,8 +35,6 @@ class VideoCard extends React.Component {
     
         Axios(options).then((res) => {
           console.log(res);
-    
-         
         });
         
         this.setState({ disabled: true });
