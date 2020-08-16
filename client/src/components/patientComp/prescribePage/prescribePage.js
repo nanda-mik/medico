@@ -98,6 +98,7 @@ class prescribePage extends Component {
     const event = this.state.event;
     console.log(data);
     console.log(this.state.event);
+    {console.log(count)}
     return (
       <div className="Prescription">
         <h3>Prescriptions</h3>
@@ -109,6 +110,7 @@ class prescribePage extends Component {
             const u = s.getTime()-d.getTime()
             if(u > 0 ){
               console.log("done");
+              count = count + 1;
               return (
                 <div className="Event">
                   <Card
@@ -126,8 +128,9 @@ class prescribePage extends Component {
             </Card.Text>
           </Card.Body>
         </Card>
-                count=count+1;
+               
                 </div>
+                 
               );
             }
             
@@ -140,8 +143,10 @@ class prescribePage extends Component {
           }
           </div>
   }
+
   {
-    count === 1  ? null :  
+    
+    count >= 1  ? null :  
       this.state.req ? <Button  variant="outline-success" style={{ borderRadius: '30px',
       padding: '10px 40px'}}  disabled>Request sent</Button> : <Button 
       variant="outline-success" onClick={this.submitHandler} style={{ borderRadius: '30px',
