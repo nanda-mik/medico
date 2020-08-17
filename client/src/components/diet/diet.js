@@ -7,6 +7,7 @@ import Axios from 'axios';
 
 const Diet = () => {
   const [diet, setDiet] = useState();
+  const [day, setDay] = useState();
   const state = useSelector((state) => state.diet.state);
   const getData = async () => {
     const options = {
@@ -16,9 +17,13 @@ const Diet = () => {
         Authorization: 'Bearer ' + localStorage.getItem('token'),
       },
     };
+    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    var d = new Date();
+    var n = d.getDay();
     const res = await Axios(options);
-    console.log(res.data.diet['tuesday'], 'hello');
-    setDiet(res.data.diet['tuesday']);
+    console.log(res.data.diet[days[n]], 'hello');
+    setDay(days[n]);
+    setDiet(res.data.diet[days[n]]);
   };
   useEffect(() => {
     getData();
@@ -29,7 +34,7 @@ const Diet = () => {
       <Card bg="light" border="info" style={{ width: '45rem' }}>
         <Card.Img variant="top" src="https://travelandleisureindia.in/wp-content/uploads/2020/07/Feature-image-Odisha-Pakhala-.jpg" />
         <Card.Body>
-          <Card.Title><h1>Diet for Tuesday</h1></Card.Title>
+          <Card.Title><h1>Diet for {day}</h1></Card.Title>
           <Card.Text>
             <div>
               <h3>Calories</h3>
@@ -38,7 +43,7 @@ const Diet = () => {
                 <div>
                   <h5>Percentage Distribution</h5>
                   <ul>
-                    <li>Carbohydates : {diet.calories.percentages.carbohydrate}%</li>
+                    <li>Carbohydrates : {diet.calories.percentages.carbohydrate}%</li>
                     <li>Fat : {diet.calories.percentages.fat}%</li>
                     <li>Protein : {diet.calories.percentages.protein}%</li>
                     <li>Fiber : {diet.calories.percentages.fiber}%</li>

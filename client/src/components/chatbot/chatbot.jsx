@@ -26,7 +26,7 @@ const Chatbot = (props) => {
   ]);
   const getBotResponse = async (text) => {
     const res = await Axios.post(
-      'https://api.eu-de.assistant.watson.cloud.ibm.com/v2/assistants/4d523037-72b3-4759-af0a-a650a2694dcb/message?version=2020-04-01',
+      'https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/5c4c8ca4-ef1f-461e-8f9b-51a09209aa37/v2/assistants/076d08fd-f9e4-454b-a8fa-bcca3f13c973/message?version=2020-04-01',
       {
         input: {
           text: text.text,
@@ -35,7 +35,7 @@ const Chatbot = (props) => {
       {
         auth: {
           username: 'apikey',
-          password: 'KzQ2sf9QxcspZmsWAvcd0kN6jqcJXoa5REvZ91Y-yimS',
+          password: 'Ci-NpU6eOcIlfxBw_ceVBtt6y-ObCl6puDcpSBdGtqpU',
         },
       }
     );
