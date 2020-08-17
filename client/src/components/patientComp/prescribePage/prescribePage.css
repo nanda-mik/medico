@@ -1,6 +1,6 @@
 .Prescription{
     margin: 50px;
-
+    min-width: 50px;
 }
 .Patient{
     width: 60%;

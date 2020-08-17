@@ -10,8 +10,14 @@
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
+    padding-top: 50px;
 }
 
 .card-container:hover{
     transform: scale(1.05);
+}
+.CardP{
+    padding-top: 50px;
+    width:300px;
+    height:40vh;
 }

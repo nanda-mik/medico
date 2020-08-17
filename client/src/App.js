@@ -424,6 +424,7 @@ class App extends Component {
         <Location
           stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>
+        {routes}
         <Layout
           header={
             <Toolbar>
@@ -456,7 +457,7 @@ class App extends Component {
             clickHandler={() => this.setState({ chat: false })}
           />
         </Layout>
-        {routes}
+        
         {redirectm}
         {redirectu}
       </Fragment>

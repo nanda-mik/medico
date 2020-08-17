@@ -3,7 +3,8 @@ import {DoctorActions} from './Doctor.types';
 const INITIAL_STATE = {
     doctorProfile : null,
     patientMonitored : [],
-    invitations : []
+    invitations : [],
+    prescriptions : []
 }
 
 const DoctorReducer =(state = INITIAL_STATE , action) => {
@@ -30,7 +31,11 @@ const DoctorReducer =(state = INITIAL_STATE , action) => {
                     ...state,
                     invitations : [arr]
                 }
-            
+        case DoctorActions.SET_PRESCRIPTIONS:
+            return{
+                ...state,
+                prescriptions : action.payload
+            }    
            
         default :
             return state;

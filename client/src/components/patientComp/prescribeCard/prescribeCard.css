@@ -1,11 +1,9 @@
 .container{
-    margin: 5px 0;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    
+    overflow-x: none;
+    padding: 30px;
 }
 .Panel{
     height: 30vh;
-    width: 400px;
+    width: 800px;
+   
 }

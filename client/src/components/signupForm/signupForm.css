@@ -3,6 +3,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: row;
+    padding-top: 60px;
 }
 
 .Form{

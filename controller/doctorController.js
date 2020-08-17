@@ -144,7 +144,7 @@ exports.addPrescription = async(req, res, next) => {
     try{
         const result = await Relation.findOne({doctorId: id, patientId: patId});
         const relationId = result._id;
-        const prescribed = req.body.prescribed;
+        const prescribed = req.body.presData;
         const time = req.body.time;
         const presc = await Prescription.findOne({relationId: relationId});
         if(presc){

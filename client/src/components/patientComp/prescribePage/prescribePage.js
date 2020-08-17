@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import PrescriptionList from '../prescriptionList/prescriptionList';
-import {Button,Form,Card } from 'react-bootstrap';
+import {Button,Form,Card, Container } from 'react-bootstrap';
 import './prescribePage.css';
 import Spinner from "../../Spinner/Spinner";
 
@@ -12,7 +12,6 @@ class prescribePage extends Component {
     this.state = {
       data: [],
       event: [],
-      prescribe : "",
       req: false,
       problem: "",
       loading: true
@@ -156,13 +155,6 @@ class prescribePage extends Component {
   }
 
         <div>
-          {data.length !== 0 ? (
-            <PrescriptionList list={data} />
-          ) : (
-              <h4>No prescriptions</h4>
-            )}
-          {this.state.loading ? <Spinner /> : null}
-        </div>
         <div className="Patient">
           <Form>
             <Form.Group controlId="prescribe">
@@ -173,7 +165,7 @@ class prescribePage extends Component {
                 required
                 autoFocus
                 type="text"
-                value={this.state.prescribe}
+                value={this.state.problem}
                 onChange={(e) => this.setState({ problem: e.target.value })}
 
               ></Form.Control>
@@ -193,6 +185,16 @@ class prescribePage extends Component {
           </Button>
           </Form>
         </div>
+          {data.length !== 0 ? (
+            <Container>
+            <PrescriptionList list={data} />
+            </Container>
+          ) : (
+              <h4>No prescriptions</h4>
+            )}
+          {this.state.loading ? <Spinner /> : null}
+        </div>
+       
       </div>
     );
   }
