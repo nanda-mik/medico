@@ -1,0 +1,57 @@
+{
+  "name": "medicomobile",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^10.2.0",
+    "@react-native-community/async-storage": "^1.11.0",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-community/picker": "^1.6.6",
+    "@react-navigation/drawer": "^5.9.0",
+    "@react-navigation/material-bottom-tabs": "^5.2.16",
+    "@react-navigation/native": "^5.7.3",
+    "@react-navigation/stack": "^5.9.0",
+    "axios": "^0.19.2",
+    "expo-font": "^8.2.2",
+    "expo-linear-gradient": "^8.2.1",
+    "expo-location": "^8.3.0",
+    "react": "16.13.1",
+    "react-native": "0.63.2",
+    "react-native-chart-kit": "^6.5.0",
+    "react-native-gesture-handler": "^1.7.0",
+    "react-native-gifted-chat": "^0.16.3",
+    "react-native-maps": "^0.27.1",
+    "react-native-paper": "^4.0.1",
+    "react-native-razorpay": "^2.1.36",
+    "react-native-reanimated": "^1.13.0",
+    "react-native-safe-area-context": "^3.1.4",
+    "react-native-screens": "^2.10.1",
+    "react-native-search-bar": "^3.5.1",
+    "react-native-svg": "^12.1.0",
+    "react-native-unimodules": "^0.10.1",
+    "react-native-vector-icons": "^7.0.0",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.11.1",
+    "@babel/runtime": "7.11.2",
+    "@react-native-community/eslint-config": "1.1.0",
+    "babel-jest": "25.5.1",
+    "eslint": "6.8.0",
+    "jest": "25.5.4",
+    "metro-react-native-babel-preset": "0.59.0",
+    "react-test-renderer": "16.13.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import PrescriptionList from '../prescriptionList/prescriptionList';
+
 import {Button,Form,Card, Container } from 'react-bootstrap';
+
 import './prescribePage.css';
 import Spinner from "../../Spinner/Spinner";
 
@@ -12,6 +14,7 @@ class prescribePage extends Component {
     this.state = {
       data: [],
       event: [],
+      prescribe: "",
       req: false,
       problem: "",
       loading: true
@@ -42,14 +45,14 @@ class prescribePage extends Component {
     var time = d.toLocaleString();
     const id = localStorage.getItem('docId');
     const options = {
-      url: `${process.env.REACT_APP_LINK}/api/patient/sendProblem/`+ id,
+      url: `${process.env.REACT_APP_LINK}/api/patient/sendProblem/` + id,
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json;charset=UTF-8',
         Authorization: 'Bearer ' + localStorage.getItem('token'),
       },
-      data:{
+      data: {
         problem: this.state.problem,
         time: time
       }
@@ -82,12 +85,12 @@ class prescribePage extends Component {
     };
     Axios(options)
 
-        .then(res => {
-            console.log(res);
-            this.setState({req:true});
-  
-        });
-}
+      .then(res => {
+        console.log(res);
+        this.setState({ req: true });
+
+      });
+  }
 
 
   render() {
@@ -97,62 +100,70 @@ class prescribePage extends Component {
     const event = this.state.event;
     console.log(data);
     console.log(this.state.event);
-    {console.log(count)}
+    { console.log(count) }
     return (
       <div className="Prescription">
         <h3>Prescriptions</h3>
         {
-        (event.length > 0) ? 
-        
-          this.state.event.map((ev) => {
-            const s = new Date(ev.event.startTime);
-            const u = s.getTime()-d.getTime()
-            if(u > 0 ){
-              console.log("done");
-              count = count + 1;
-              return (
-                <div className="Event">
-                  <Card
-          
-          key='Success'
-          bg="success"
-          style={{ width: '18rem' }}
-          className="mb-2"
-        >
-          <Card.Header>Your video Appointment</Card.Header>
-          <Card.Body>
-            <Card.Title>Event time for your appointment with doctor</Card.Title>
-            <Card.Text>
-              Your Video appointment is Scheduled at {ev.event.startTime}. For meeting details check the registered email .
-            </Card.Text>
-          </Card.Body>
-        </Card>
-               
-                </div>
-                 
-              );
-            }
-            
-          }) :
-          <div>
-          {
-            this.state.req ? <Button variant="outline-success" style={{ borderRadius: '30px',
-      padding: '10px 40px'}}  disabled>Request sent</Button> : <Button variant="outline-success" onClick={this.submitHandler} style={{ borderRadius: '30px',
-            padding: '10px 40px'}} >Request for Video appointment</Button> 
-          }
-          </div>
-  }
+          (event.length > 0) ?
 
-  {
-    
-    count === 0 && event.length > 0 ? this.state.req ? <Button  variant="outline-success" style={{ borderRadius: '30px',
-    padding: '10px 40px'}}  disabled>Request sent</Button> : <Button 
-    variant="outline-success" onClick={this.submitHandler} style={{ borderRadius: '30px',
-    padding: '10px 40px'}} >Request for Video appointment</Button>  :  
-    null
-      
-    
-  }
+            this.state.event.map((ev) => {
+              const s = new Date(ev.event.startTime);
+              const u = s.getTime() - d.getTime()
+              if (u > 0) {
+                console.log("done");
+                count = count + 1;
+                return (
+                  <div className="Event">
+                    <Card
+
+                      key='Success'
+                      bg="success"
+                      style={{ width: '18rem' }}
+                      className="mb-2"
+                    >
+                      <Card.Header>Your video Appointment</Card.Header>
+                      <Card.Body>
+                        <Card.Title>Event time for your appointment with doctor</Card.Title>
+                        <Card.Text>
+                          Your Video appointment is Scheduled at {ev.event.startTime}. For meeting details check the registered email .
+            </Card.Text>
+                      </Card.Body>
+                    </Card>
+
+                  </div>
+
+                );
+              }
+
+            }) :
+            <div>
+              {
+                this.state.req ? <Button variant="outline-success" style={{
+                  borderRadius: '30px',
+                  padding: '10px 40px'
+                }} disabled>Request sent</Button> : <Button variant="outline-success" onClick={this.submitHandler} style={{
+                  borderRadius: '30px',
+                  padding: '10px 40px'
+                }} >Request for Video appointment</Button>
+              }
+            </div>
+        }
+
+        {
+
+          count === 0 && event.length > 0 ? this.state.req ? <Button variant="outline-success" style={{
+            borderRadius: '30px',
+            padding: '10px 40px'
+          }} disabled>Request sent</Button> : <Button
+            variant="outline-success" onClick={this.submitHandler} style={{
+              borderRadius: '30px',
+              padding: '10px 40px'
+            }} >Request for Video appointment</Button> :
+            null
+
+
+        }
 
         <div>
         <div className="Patient">

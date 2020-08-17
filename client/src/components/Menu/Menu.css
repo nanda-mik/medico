@@ -4,10 +4,12 @@
 .Menu{
     overflow: hidden;
     align-items: center;
+
     padding-top: 40px;
     margin-top: 60px;
     background-color: rgb(245, 246, 247);
     min-height: 100vh;
+
    }
 
 .Content{

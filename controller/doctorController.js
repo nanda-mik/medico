@@ -4,6 +4,10 @@ const Relation = require('../models/relation');
 const Prescription = require('../models/prescription');
 const Monitor = require('../models/monitorData');
 const Appointment = require('../models/appointments');
+const Subscription = require('../models/subscribers');
+const webpush = require('web-push');
+
+webpush.setVapidDetails(process.env.WEB_PUSH_CONTACT, process.env.PUBLIC_VAPID_KEY, process.env.PRIVATE_VAPID_KEY);
 
 exports.getProfile = async(req, res, next) => {
     const id = req.userId;
@@ -165,6 +169,18 @@ exports.addPrescription = async(req, res, next) => {
             const resu = await prescription.save();
             console.log(resu);
         }
+        const subscriptions = await Subscription.find();
+        subscriptions.forEach(async sub => {
+            var pushConfig = {
+                endpoint: sub.endpoint,
+                keys:{
+                    auth: sub.keys.auth,
+                    p256dh: sub.keys.p256dh
+                }
+            };
+            const resu = await webpush.sendNotification(pushConfig,JSON.stringify({title:"Notified",body:"New prescription added"}));
+            console.log(resu);
+        })
         const arr = await Prescription.find();
         res.status(200).json({message: "success", arr: arr});
     }catch(err){
