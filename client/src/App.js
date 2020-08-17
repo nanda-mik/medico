@@ -10,6 +10,7 @@ import DocSignup from './components/signupForm/docSignup';
 import PatientSignup from './components/signupForm/patientSignup';
 import DocLogin from './components/loginForm/docLogin';
 import PatientLogin from './components/loginForm/patientLogin';
+import Admin from "./components/admin/admin";
 
 import Alert from 'react-bootstrap/Alert';
 import Layout from './components/Layout/Layout';
@@ -346,6 +347,9 @@ class App extends Component {
             <PatientLogin {...props} onLogin={this.patientLoginHandler} />
           )}
         />
+        <Route path="/admin" exact>
+            <Admin/>
+        </Route>
         <Redirect to="/" />
       </Switch>
     );
