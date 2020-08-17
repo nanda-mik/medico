@@ -1,5 +1,30 @@
 {
   "odisha": {
+    "monday": {
+      "calories": {
+        "amount": 2250,
+        "percentages": {
+          "carbohydrate": 55,
+          "fat": 20,
+          "protein": 25,
+          "fiber": "34 grams"
+        }
+      },
+      "breakfast": [
+        "2 banana and some nuts",
+        "150gm oat meal",
+        " One cup of black herbal tea(tulsi)"
+      ],
+      "lunch": [
+        "Pakhala with curd.",
+        "50gm aloo bharta and 50gm spinach"
+      ],
+      "dinner": [
+        "one glass milk",
+        "4 or 5 cashew nuts",
+        "vermicelli upma 100gm"
+      ]
+    },
     "tuesday": {
       "calories": {
         "amount": 2250,
@@ -53,6 +78,83 @@
       ]
     },
     "thursday": {
+      "calories": {
+        "amount": 2250,
+        "percentages": {
+          "carobhydrate": 55,
+          "fat": 20,
+          "protein": 25,
+          "fiber": "34 grams"
+        }
+      },
+      "breakfast": [
+        "2 banana and some nuts",
+        "150gm oat meal",
+        " One cup of black herbal tea(tulsi)"
+      ],
+      "lunch": [
+        "Pakhala with curd.",
+        "150gm aloo bharta and 50gm spinach"
+      ],
+      "dinner": [
+        "one glass milk",
+        "4 or 5 cashew nuts",
+        "vermicelli upma 100gm"
+      ]
+    },
+    "friday": {
+      "calories": {
+        "amount": 2250,
+        "percentages": {
+          "carbohydrate": 55,
+          "fat": 20,
+          "protein": 25,
+          "fiber": "34 grams"
+        }
+      },
+      "breakfast": [
+        "1 banana and some dates",
+        "Two slices whole-grain Chappati with milk",
+        "One cup of black herbal tea(tulsi)"
+      ],
+      "lunch": [
+        "50gm Mix salad consists of cucumber, tomato, onion and carrot",
+        "150gm brown rice with dal",
+        "Glass of water"
+      ],
+      "dinner": [
+        "2 piece chappati with mix vegetable curry",
+        "One glass milk",
+        "dry nuts"
+      ]
+    },
+    "saturday": {
+      "calories": {
+        "amount": 2250,
+        "percentages": {
+          "carobhydrate": 55,
+          "fat": 20,
+          "protein": 25,
+          "fiber": "34 grams"
+        }
+      },
+      "breakfast": [
+        "2 piece bread and egg white",
+        "1 glass milk",
+        "30gm dry fruits"
+      ],
+      "lunch": [
+        "White Rice(300gm) and Chicken breast or 200gm paneer",
+        "Mix vegetable Salad",
+        "Fry or curry"
+      ],
+      "dinner": [
+        "one glass milk",
+        "2 piece chicken leg",
+        "Hot vegetable curry"
+      ]
+    },
+    "sunday": {
       "calories": {
         "amount": 2250,
         "percentages": {
