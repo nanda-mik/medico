@@ -1,6 +1,8 @@
-.card-container{
-    margin: 5px 0;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
+.Pres{    
+    min-width: 30rem;
+}
+.Data{
+    height: 30vh;
+    width: 500px;
+    padding: 40px
 }

@@ -17,4 +17,7 @@ export const removeInvitations = id => ({
     type : DoctorActions.REMOVE_INVITATION,
     payload : id
 });
-
+export const setPrescriptions = prescriptions => ({
+    type: DoctorActions.SET_PRESCRIPTIONS,
+    payload : prescriptions
+});

@@ -34,7 +34,7 @@ class Cards extends Component {
         }
         return (
             <div>
-                <div >
+                <div className="CardP">
                     
                     <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src="https://i.pinimg.com/564x/77/cd/18/77cd184c35d5c196248ff595a2cd23b7.jpg" />

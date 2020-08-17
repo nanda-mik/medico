@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-import { Form, Button, FormControl } from 'react-bootstrap';
+import { Form, Button, FormControl,Card,Col,Row,Container } from 'react-bootstrap';
 import PrescriptionList from '../prescriptionList/prescriptionList';
 import { connect } from 'react-redux';
+import './prescribePage.css'
+import { setPrescriptions } from '../../../Redux/Doctor/Doctor.Actions';
 
     /*const CLIENT_ID = "185334468057-0ikd8rea7drp4rmkjvte2n1k756e60mf.apps.googleusercontent.com";
     const API_KEY ="AIzaSyB1wAxp6JbIg3GEgnPjOYW_DAfVnMl5Udo";
@@ -17,6 +19,8 @@ class prescribePage extends Component {
       data: [],
       prescriptionId: null,
       prescribe: '',
+      prescribearr : [],
+      patData : []
     };
   }
 
@@ -33,12 +37,15 @@ class prescribePage extends Component {
     Axios(options).then((res) => {
       console.log(res.data);
       this.setState({ data: res.data.prescArr });
+      this.setState({patData : res.data.problemArr});
       this.setState({ prescriptionId: res.data.prescriptionId });
+      console.log(res.data.prescriptionId)
     });
   }
 
   submtiHandler = (e) => {
     e.preventDefault();
+    
     console.log(this.state.prescribe);
     var d = new Date();
     var time = d.toLocaleString();
@@ -52,10 +59,16 @@ class prescribePage extends Component {
         Authorization: 'Bearer ' + localStorage.getItem('token'),
       },
       data: {
-        prescribed: this.state.prescribe,
+        presData: this.state.prescribe,
         time: time
       }
     };
+    this.setState(state => {
+      return {
+        data : [...state.data , options.data]
+      }
+    })
+    
     Axios(options)
       .then((resData) => {
         if (resData.status !== 200 && resData.status !== 201) {
@@ -67,14 +80,22 @@ class prescribePage extends Component {
       .catch((err) => {
         console.log(err);
       });
+     
   };
 
   render() {
     const id = localStorage.getItem('patId');
     const data = this.state.data;
+    const l = this.state.data.length-1;
+    const d = this.state.patData.length-1;
+    console.log(this.state.data[l]);
+    let a = {...this.state.data[l]}
+    let b = {...this.state.patData[d]}
+    let dtime = new Date(a.time);
+    let ptime = new Date(b.time);
     console.log(data);
     return (
-      <div>
+      <div className="Prescription">
         <div>
           <h3>Prescriptions</h3>
           {this.props.patProfile.map((pat) => {
@@ -83,23 +104,32 @@ class prescribePage extends Component {
               console.log(pat.profile);
               return (
                 <div>
-                  <h4>{pat.profile.name}</h4>
-                  <h4>{pat.profile.gender}</h4>
-                  <h4>{pat.profile.age}</h4>
-                  <h4>{pat.profile.weight}</h4>
-                  <h4>{[pat.profile.height]}</h4>
-                </div>
-              );
-              console.log(this.state.patientProfile);
-            }
-          })}
-          {data.length !== 0 ? (
-            <PrescriptionList list={data} />
-          ) : (
-            <h4>No prescriptions</h4>
-          )}
-        </div>
-        <Form onSubmit={this.submtiHandler}>
+                  
+                  <Card>
+                  <Card.Body>
+                  <Container>
+  <Row>
+    <Col>Patient's name : {pat.profile.name}{' '}</Col>
+    <Col>Patient's gender : {pat.profile.gender}{' '}</Col>
+  </Row>
+  <Row>
+    <Col>Patient's age : {pat.profile.age}years{' '}</Col>
+    <Col> Patient's Weight : {pat.profile.weight}kg{' '}</Col>
+    <Col>Patient's height : {pat.profile.height}cm{' '}</Col>
+    </Row>
+  </Container>
+  {(dtime.getTime() - ptime.getTime() > 0) ? null : <Card border="danger" style={{ width: '18rem' }}>
+    <Card.Header>Patient's problem</Card.Header>
+    <Card.Body>
+  <Card.Title>{b.problemData}</Card.Title>
+      <Card.Text>
+      Posted on {b.time}
+      </Card.Text>
+    </Card.Body>
+  </Card>}
+                  </Card.Body>
+                  <Card.Body>
+                  <Form onSubmit={this.submtiHandler}>
           <Form.Group controlId="prescribe">
             <Form.Label>Prescribe Here</Form.Label>
             <Form.Control
@@ -110,6 +140,7 @@ class prescribePage extends Component {
               type="text"
               value={this.state.prescribe}
               onChange={(e) => this.setState({ prescribe: e.target.value })}
+              style={{width: "50%"}}
             ></Form.Control>
           </Form.Group>
 
@@ -121,10 +152,31 @@ class prescribePage extends Component {
               borderRadius: '30px',
               padding: '10px 40px',
             }}
+           
           >
             PRESCRIBE
           </Button>
         </Form>
+                    <div>
+                  {data.length !== 0 ? (
+            <PrescriptionList list={data} />
+          ) : (
+            <h4>No prescriptions</h4>
+          )}
+        </div>
+        
+  </Card.Body>
+                  
+                  </Card>
+                </div>
+              );
+              console.log(this.state.patientProfile);
+            }
+          })}
+         
+        </div>
+        
+         
       </div>
     );
   }
@@ -132,9 +184,10 @@ class prescribePage extends Component {
 
 let mapStateToProps = function mapStateTopProps(state) {
   return {
-    patProfile: state.doctor.patientMonitored,
+    patProfile: state.doctor.patientMonitored
   };
 };
+
 
 
 export default connect(mapStateToProps)(prescribePage);

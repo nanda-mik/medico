@@ -428,6 +428,7 @@ class App extends Component {
         <Location
           stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>
+        {routes}
         <Layout
           header={
             <Toolbar>

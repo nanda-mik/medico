@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./prescribeCard.css";
+import {Card} from 'react-bootstrap';
 
 class Cards extends Component {
     constructor(props) {
@@ -8,10 +9,15 @@ class Cards extends Component {
 
     render() {
         return (
-            <div>
-                <div className='card-container'>
-                    <h3>{this.props.data.presData}</h3>
-                    <p>{this.props.data.time}</p>
+            <div className="Pres">
+                <div className="Data">
+                    <Card className="text-center">
+  <Card.Header>Precribed data</Card.Header>
+  <Card.Body>
+        <Card.Title>{this.props.data.presData}</Card.Title>
+  </Card.Body>
+        <Card.Footer className="text-muted">Prescribed on {this.props.data.time}</Card.Footer>
+</Card>
                 </div>
             </div>
         );

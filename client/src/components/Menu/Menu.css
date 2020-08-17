@@ -1,39 +1,40 @@
+.Home{
+    padding: 40px;
+}
 .Menu{
     overflow: hidden;
     align-items: center;
+
+    padding-top: 40px;
+    margin-top: 60px;
+    background-color: rgb(245, 246, 247);
+    min-height: 100vh;
+
+   }
+
+.Content{
     display: flex;
     flex-direction: row;
-    background-color: rgb(173, 187, 231);
-    height: 85vh;
-    font-family: 'Merienda', cursive;
-    padding-top: 10vh;
-   }
-.Menu img{
-    height: 200px;
-    width: 250px;
-    border-radius: 900px;
-    
-}
-.Content{
-    display: inline-block;
-   width: 30%;
-   
-    block-size: auto;
     text-align: center;
-   transform: translateX(200px)
-   translateY(50px);
-   
+   transform: translateX(70px)
+}
+.Content img{
+    height: 600px;
+    width: 620px;
+    transform: translateX(-30px);
 }
 .Con{
-    
-    margin: 40px;
-    
+    font-family: 'Acme', sans-serif;
+    margin:0 20px;
+    width: 55%;
+    transform: translateY(160px);
 }
 .Con p{
-    font-size: 17px;
+    font-size: 27px;
 }
 .Con h1{
-    font-size: 25px;
+    font-size: 55px;
+    color: rgba(2, 9, 49, 0.938);
 }
 .Con button{
     font-size: 16px;
@@ -50,13 +51,12 @@
     border: 1px solid brown;
     color: brown;
 }
+.Doc{
+    height: 30vh;
+    width: 60vw;
+    padding: 30px;
+    text-align: center;
+    transform: translateX(270px);
+}
 
-.Image{
-    transform: translateX(200px)
-    translateY(220px);
-}
-.Images{
-    transform: translateY(-200px)
-    translateX(230px);
-}
 
