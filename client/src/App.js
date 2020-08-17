@@ -419,6 +419,7 @@ class App extends Component {
     }
 
     const myStyle = {
+      marginTop: "9vh",
       marginLeft: "7vh",
       marginRight: "5vh"
     };
@@ -428,6 +429,14 @@ class App extends Component {
         <Location
           stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>
+        {(this.state.error)?(
+          <div className="errorbox" style={myStyle}>
+            <Alert variant="danger" onClose={this.errorHandler} dismissible>
+              <Alert.Heading>You got an error!</Alert.Heading>
+              <p>Check Your Credentials Again!!</p>
+            </Alert>
+          </div>
+        ):null}
         {routes}
         <Layout
           header={
@@ -441,15 +450,6 @@ class App extends Component {
             </Toolbar>
           }
         >
-          {(this.state.error)?(
-          <div className="errorbox" style={myStyle}>
-            <Alert variant="danger" onClose={this.errorHandler} dismissible>
-              <Alert.Heading>You got an error!</Alert.Heading>
-              <p>Check Your Credentials Again!!</p>
-            </Alert>
-          </div>
-        ):null}
-        {routes}
         {redirectm}
         {redirectu}
           <ChatButton
