@@ -11,6 +11,7 @@ const patientRoutes = require('./routes/patientRoutes');
 const doctorRoutes = require('./routes/doctorRoutes');
 const dietRoutes = require('./routes/dietRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -23,6 +24,7 @@ app.use((req, res, next) => {
 });
 
 // app.use(pino);
+app.use('/api/admin',adminRoutes);
 app.use('/notifications', notificationRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/patient', patientRoutes);
