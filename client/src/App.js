@@ -11,7 +11,8 @@ import PatientSignup from './components/signupForm/patientSignup';
 import DocLogin from './components/loginForm/docLogin';
 import PatientLogin from './components/loginForm/patientLogin';
 import Admin from "./components/admin/admin";
-
+import MobileNavigation from './components/Navigation/MobileNavigation/MobileNavigation';
+import Backdrop from './components/Backdrop/Backdrop';
 import Alert from 'react-bootstrap/Alert';
 import Layout from './components/Layout/Layout';
 import Toolbar from './components/Toolbar/Toolbar';
@@ -48,6 +49,8 @@ import PatientMonitored from './components/doctorComp/PatientMonitored';
 
 class App extends Component {
   state = {
+    showBackdrop: false,
+    showMobileNav: false,
     isAuth: false,
     token: null,
     userId: null,
@@ -92,6 +95,14 @@ class App extends Component {
       new Date(expiryDate).getTime() - new Date().getTime();
     this.setAutoLogout(remainingMilliseconds);
   }
+
+  mobileNavHandler = isOpen => {
+    this.setState({ showMobileNav: isOpen, showBackdrop: isOpen });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({ showBackdrop: false, showMobileNav: false, error: null });
+  };
 
   logoutHandler = () => {
     this.setState({
@@ -426,6 +437,9 @@ class App extends Component {
 
     return (
       <Fragment>
+        {this.state.showBackdrop && (
+          <Backdrop onClick={this.backdropClickHandler} />
+        )}
         <Location
           stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>
@@ -442,12 +456,22 @@ class App extends Component {
           header={
             <Toolbar>
               <MainNavigation
+               onOpenMobileNav={this.mobileNavHandler.bind(this, true)}
                 onLogout={this.logoutHandler}
                 isAuth={this.state.isAuth}
                 isPatient={this.state.isPatient}
                 isDoc={this.state.isDoc}
               />
             </Toolbar>
+          }
+          mobileNav={
+            <MobileNavigation
+              open={this.state.showMobileNav}
+              mobile
+              onChooseItem={this.mobileNavHandler.bind(this, false)}
+              onLogout={this.logoutHandler}
+              isAuth={this.state.isAuth}
+            />
           }
         >
         {redirectm}
