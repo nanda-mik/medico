@@ -76,12 +76,65 @@ Planning for integrating an online payment system for ordering needs and deliver
 Gathering data about local facilities for building the necessary modules.
 We need to think of a flexible and user friendly UI for smooth interaction between doctor and patient.
 
-## Prerequisties4.
-For backend and web app : 
+## Prerequisties
+
+For backend and web app : node and npm installed
+For android app : node, npm and react native cli installed 
 
 ## Installation & Setup 
 
-will be updated soon.
+A step by step series of examples that tell you how to get a development env running
+
+To start the server
+
+Go to root of the project, run
+
+```
+npm install
+```
+
+```
+npm start
+```
+
+Server will be running on localhost
+
+To start the web app
+
+Go to root of the project, run
+
+```
+cd client
+```
+
+```
+npm install
+```
+
+```
+npm start
+```
+
+A react app will be running on your browser.
+
+To start the android app
+On your android device enable usb debugging connect usb to you PC.
+
+Go to root of the project, run
+
+```
+cd mobileapp
+```
+
+```
+npm install
+```
+
+```
+npm start
+```
+A metro server will run and then,
+An android app will be running on your android device.
 
 ## Team Members
 * Sourav Kunda            
