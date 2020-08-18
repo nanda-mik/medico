@@ -63,7 +63,6 @@ Medico, where people can get monitored by the doctor and consult for better heal
 
 ## Screenshots
 
-![](assets/images/medico1.PNG)
 ![](assets/images/medico3.PNG)
 ![](assets/images/medico8.PNG)
 ![](assets/images/medico11.PNG)
