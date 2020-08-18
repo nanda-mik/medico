@@ -334,8 +334,8 @@ caloriesarr : this.props.cal})
                 autoFocus
                 type="number"
                 placeholder="Pulse rate"
-                value={this.state.pulserate}
-                onChange={(e) => this.setState({ pulserate: e.target.value })}
+                value={this.state.pulserate.pulse}
+                onChange={(e) => this.setState({pulserate: {...this.state.pulserate, pulse: e.target.value}})}
               ></Form.Control>
               <IconButton onClick={this.phandler}>
                 <SystemUpdateAltIcon fontSize="small" />
@@ -347,8 +347,8 @@ caloriesarr : this.props.cal})
                 autoFocus
                 type="number"
                 placeholder="Calories you loose per day"
-                value={this.state.calories}
-                onChange={(e) => this.setState({ calories: e.target.value })}
+                value={this.state.calories.calorie}
+                onChange={(e) => this.setState({calories :{...this.state.calories , calorie:e.target.value} })}
               ></Form.Control>
               <IconButton onClick={this.chandler}>
                 <SystemUpdateAltIcon fontSize="small" />

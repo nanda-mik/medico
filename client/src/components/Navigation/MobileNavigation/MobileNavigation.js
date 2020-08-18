@@ -13,6 +13,8 @@ const mobileNavigation = props => (
         onChoose={props.onChooseItem}
         isAuth={props.isAuth}
         onLogout={props.onLogout}
+        isPatient={props.isPatient}
+        isDoc={props.isDoc}
       />
     </ul>
   </nav>

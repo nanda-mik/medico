@@ -2,6 +2,7 @@ import React from 'react';
 import './search-box.css';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
+import SearchIcon from '@material-ui/icons/Search';
 
 export const SearchBox = ({ placeholder, handleChange }) => {
     return (
@@ -10,6 +11,10 @@ export const SearchBox = ({ placeholder, handleChange }) => {
             type='search'
             placeholder={placeholder}
             onChange={handleChange}
+            style={{
+                border:"none",
+                borderBottom: "1px solid black"
+            }}
         />
             <div className="dropdown">
                 <DropdownButton id="dropdown-basic-button" title="All">
