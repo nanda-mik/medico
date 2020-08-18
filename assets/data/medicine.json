@@ -1,102 +1,102 @@
 {
-    "recommendation":{
-        "Headache": {
-            "medicine": ["Crocin"],
-            "doctor" : {
-                "name": "Dr. Upendranath Panda",
-                "Contact": "12345678"
-            }
-        },
-        "Loose Motion": {
-            "medicine": ["Ofloxacin and Ornidazole(O2)"],
-            "doctor" : {
-                "name": "Dr. Upendranath Panda",
-                "Contact": "12345678"
-            }
-        },
-        "Common Cold":{
-            "medicine": ["Namcold"],
-            "doctor" : {
-                "name": "Dr. Devi Rajgopal",
-                "Contact": "12345678"
-            }
-        },
-        "Wounds and cuts":{
-            "medicine": ["Paraxin Capsules", "betadin(external use only)"],
-            "doctor" : {
-                "name": "Dr. Devi Rajgopal",
-                "Contact": "12345678"
-            }
-        },
-        "Cough":{
-            "medicine": ["Azythromycin"],
-            "doctor" : {
-                "name": "Dr. Devi Rajgopal",
-                "Contact": "12345678"
-            }
-        },
-        "Running nose or sneezing":{
-            "medicine": ["sinarest"],
-            "doctor" : {
-                "name": "Dr. Devi Rajgopal",
-                "Contact": "12345678"
-            }
-        },
-        "Fever":{
-            "medicine": ["paracetamol"],
-            "doctor" : {
-                "name": "Dr. Devi Rajgopal",
-                "Contact": "12345678"
-            }
-        },
-        "Indigestion": {
-            "medicine": ["divol", "digene"],
-            "doctor":{
-                "name": "Dr. Indira Roy",
-                "Contact": "12345678"
-            }
-        },
-        "Gastric":{
-            "medicine":["pantacid", "pantop"],
-            "doctor": {
-                "name": "Dr. Indira Roy",
-                "Contact": "12345678"
-            } 
-        },
-        "Sudden BP Control":{
-            "medicine":["Telvas 40"],
-            "doctor":{
-                "name": "Dr. Indira Roy",
-                "Contact": "12345678"
-            }
-        },
-        "Mouth ulcers":{
-            "medicine":["Bicosil", "Bicilac"],
-            "doctor": {
-                "name": "Dr. Indira Roy",
-                "Contact": "12345678"
-            }
-        },
-        "Consistent Cold":{
-            "medicine":["Montelukast"],
-            "doctor":{
-                "name": "Dr. Indira Roy",
-                "Contact": "12345678"
-            }
-        },
-        "Sudden asthma":{
-            "medicine":["Allegra(Fexofenadine)"],
-            "doctor":{
-                "name": "Dr. A.G.K Dash",
-                "Contact": "12345678"
-            }
-        },
-        "Vommiting":{
-            "medicine":["Domstal"],
-            "doctor":{
-                "name": "Dr. A.G.K Dash",
-                "Contact": "12345678"
-            }
-        }
+  "recommendation": {
+    "Headache": {
+      "medicine": ["Crocin"],
+      "doctor": {
+        "name": "Dr. Upendranath Panda",
+        "Contact": "12345678"
+      }
+    },
+    "Loose Motion": {
+      "medicine": ["Ofloxacin and Ornidazole(O2)"],
+      "doctor": {
+        "name": "Dr. Upendranath Panda",
+        "Contact": "12345678"
+      }
+    },
+    "Common Cold": {
+      "medicine": ["Namcold"],
+      "doctor": {
+        "name": "Dr. Devi Rajgopal",
+        "Contact": "12345678"
+      }
+    },
+    "Wounds and cuts": {
+      "medicine": ["Paraxin Capsules", "betadin(external use only)"],
+      "doctor": {
+        "name": "Dr. Devi Rajgopal",
+        "Contact": "12345678"
+      }
+    },
+    "Cough": {
+      "medicine": ["betadin"],
+      "doctor": {
+        "name": "Dr. Devi Rajgopal",
+        "Contact": "12345678"
+      }
+    },
+    "Running nose or sneezing": {
+      "medicine": ["sinarest"],
+      "doctor": {
+        "name": "Dr. Devi Rajgopal",
+        "Contact": "12345678"
+      }
+    },
+    "Fever": {
+      "medicine": ["paracetamol"],
+      "doctor": {
+        "name": "Dr. Devi Rajgopal",
+        "Contact": "12345678"
+      }
+    },
+    "Indigestion": {
+      "medicine": ["divol", "digene"],
+      "doctor": {
+        "name": "Dr. Indira Roy",
+        "Contact": "12345678"
+      }
+    },
+    "Gastric": {
+      "medicine": ["pantacid", "pantop"],
+      "doctor": {
+        "name": "Dr. Indira Roy",
+        "Contact": "12345678"
+      }
+    },
+    "Sudden BP Control": {
+      "medicine": ["Telvas 40"],
+      "doctor": {
+        "name": "Dr. Indira Roy",
+        "Contact": "12345678"
+      }
+    },
+    "Mouth ulcers": {
+      "medicine": ["Bicosil", "Bicilac"],
+      "doctor": {
+        "name": "Dr. Indira Roy",
+        "Contact": "12345678"
+      }
+    },
+    "Consistent Cold": {
+      "medicine": ["Montelukast"],
+      "doctor": {
+        "name": "Dr. Indira Roy",
+        "Contact": "12345678"
+      }
+    },
+    "Sudden asthma": {
+      "medicine": ["Allegra(Fexofenadine)"],
+      "doctor": {
+        "name": "Dr. A.G.K Dash",
+        "Contact": "12345678"
+      }
+    },
+    "Vommiting": {
+      "medicine": ["Domstal"],
+      "doctor": {
+        "name": "Dr. A.G.K Dash",
+        "Contact": "12345678"
+      }
     }
+  }
 }
