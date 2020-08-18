@@ -2,6 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 // const pino = require('express-pino-logger')();
+const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
+const xss = require('xss-clean');
+const mongoSanitize = require('express-mongo-sanitize');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -15,6 +19,17 @@ const adminRoutes = require('./routes/adminRoutes');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(helmet());
+
+const limiter = rateLimit({
+  max: 100,
+  windowMs: 60 * 60 * 1000,
+  message: 'Too many requests from this IP, please try again in an hour!',
+});
+app.use('/', limiter);
+
+app.use(mongoSanitize());
+app.use(xss());
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -41,13 +56,13 @@ app.use((error, req, res, next) => {
     data: data,
   });
 });
-
+const host = '192.168.43.206';
 mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
   })
   .then((res) => {
     console.log('connected');
-    app.listen(3001);
+    app.listen(3001, host);
   })
   .catch((err) => console.log(err));

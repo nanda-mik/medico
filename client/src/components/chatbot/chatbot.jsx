@@ -63,7 +63,7 @@ const Chatbot = (props) => {
       style={{
         height: '85%',
         position: 'fixed',
-        right: props.show ? 0 : '-100%',
+        right: props.show ? 0 : '-1000px',
         bottom: 0,
         backgroundColor: 'white',
         zIndex: 15,
@@ -106,7 +106,7 @@ const Chatbot = (props) => {
         messages={messages}
         onMessageSend={addNewMessage}
         placeholder={'Type a message...'}
-        width={400}
+        width={window.innerWidth > 500 ? 400 : window.innerWidth - 50}
         dir="down"
       ></Chat>
     </div>

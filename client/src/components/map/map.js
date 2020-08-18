@@ -311,7 +311,9 @@ class DisplayMapClass extends React.Component {
 
   componentWillUnmount() {
     // Cleanup after the map to avoid memory leaks when this component exits the page
-    this.state.map.dispose();
+    if (this.state.map) {
+      this.state.map.dispose();
+    }
   }
 
   render() {
