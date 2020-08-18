@@ -11,7 +11,9 @@ Complete practical(Production) build is still under development
 
 ### An all in one digital platform which bridges the gap between the patients and physicians for better care of your health during these days under monitorization from doctors. 
 
-### [Watch demo video here 📺](#)
+### [Watch demo video here 📺](https://www.youtube.com/watch?v=Yz6TE88WfwU&feature=youtu.be)
+
+### [You can get the .apk file and all details here](https://drive.google.com/drive/folders/1Q2daO1J7mMj3tiDGCBfPZAnaxjqr1Sqk?usp=sharing)
 
 ## 📌 Inspiration
 
@@ -61,32 +63,67 @@ Medico, where people can get monitored by the doctor and consult for better heal
 
 ## Screenshots
 
-will be updated soon.
+![](assets/images/medico1)
+![](assets/images/medico3)
+![](assets/images/medico8)
+![](assets/images/medico11)
+![](assets/images/medico16)
+![](assets/images/android1)
+![](assets/images/android2)
+![](assets/images/android3)
 
-## How we built it
+## How we built it 🏁 Technology Stack
 
-will be updated soon.
+**Frontend**
+* [React](https://reactjs.org/)
+* [Redux](https://redux.js.org/)
+* [React-Bootstrap](https://react-bootstrap.github.io/)
+
+**Android**
+* [ReactNative](https://reactnative.dev/)
+
+**Backend**
+* [Nodejs](https://nodejs.org/en/)
+* [mongoDB](https://www.mongodb.com/)
+* [nodemailer](https://nodemailer.com/about/)
+* [express](https://expressjs.com/)
+
+* [Mapquest](https://www.mapquest.com/)
+* [Here API](https://developer.here.com/)
+* [Google-Map-API](https://developers.google.com/maps/documentation)
+* [Stripe](https://stripe.com/in)
+* [RazorPay](https://razorpay.com/)
+* [IBMwatson-Assistant](https://www.ibm.com/cloud/watson-assistant/)
+* [PWA](https://web.dev/progressive-web-apps/)
+* [Helmet](https://helmetjs.github.io/)
 
 ## Challenges we ran into
 
-We need to make a robust architecture of database for such big platform and organising events for both patient and doctor via virtual prescription.
-We need to search for many packages capable of supporting the application in maintaining the application.
-For tracking user's location and searching nearest hospitals  we need to search for appropriate packages and availability for APKs.
-Planning for integrating an online payment system for ordering needs and delivering commodities.
-Gathering data about local facilities for building the necessary modules.
-We need to think of a flexible and user friendly UI for smooth interaction between doctor and patient.
+* We need to make a robust architecture of database for such a big platform and organising events for both patient and doctor via virtual prescription.
+
+* We need to search for many packages capable of supporting the application in maintaining the application.
+
+* For tracking user's location and searching nearest hospitals  we need to search for appropriate packages and availability for APKs.
+
+* Planning for integrating an online payment system for ordering needs and delivering commodities.
+
+* Gathering data about local facilities for building the necessary modules.
+
+* We need to think of a flexible and user friendly UI for smooth interaction between doctor and patient.
 
 ## Prerequisties
 
-For backend and web app : node and npm installed
-For android app : node, npm and react native cli installed 
+**For backend and web app**
+* node and npm installed
+
+**For android app** 
+* node, npm and react native cli installed 
 
 ## Installation & Setup 
 
 A step by step series of examples that tell you how to get a development env running
 
-To start the server
-
+**To start the server**
 Go to root of the project, run
 
 ```
@@ -99,8 +136,7 @@ npm start
 
 Server will be running on localhost
 
-To start the web app
-
+**To start the web app**
 Go to root of the project, run
 
 ```
@@ -117,7 +153,7 @@ npm start
 
 A react app will be running on your browser.
 
-To start the android app
+**To start the android app**
 On your android device enable usb debugging connect usb to you PC.
 
 Go to root of the project, run
@@ -135,6 +171,28 @@ npm start
 ```
 A metro server will run and then,
 An android app will be running on your android device.
+
+**set up env file**
+
+In the root directory
+
+```
+MONGODB_URI = ''
+api_key = ''
+
+WEB_PUSH_CONTACT = ''
+PUBLIC_VAPID_KEY = ''
+PRIVATE_VAPID_KEY = ''
+
+```
+
+Inside the client
+
+```
+REACT_APP_PUBLIC_VAPID_KEY= ''
+REACT_APP_LINK = 'http://localhost:3001'
+
+```
 
 ## Team Members
 * Sourav Kunda            
