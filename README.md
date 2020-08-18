@@ -69,11 +69,15 @@ will be updated soon.
 
 ## Challenges we ran into
 
-will be updated soon.
+We need to make a robust architecture of database for such big platform and organising events for both patient and doctor via virtual prescription.
+We need to search for many packages capable of supporting the application in maintaining the application.
+For tracking user's location and searching nearest hospitals  we need to search for appropriate packages and availability for APKs.
+Planning for integrating an online payment system for ordering needs and delivering commodities.
+Gathering data about local facilities for building the necessary modules.
+We need to think of a flexible and user friendly UI for smooth interaction between doctor and patient.
 
-## Prerequisties
-
-will be updated soon.
+## Prerequisties4.
+For backend and web app : 
 
 ## Installation & Setup 
 
