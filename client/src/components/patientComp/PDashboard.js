@@ -18,6 +18,7 @@ import Graphbp from './Graphs/Graphbp/Graphbp';
 import Graphd from './Graphs/Graphd/Graphd';
 import GraphCovid from './Graphs/GraphCovid/GraphCovid';
 import Card from 'react-bootstrap/Card'
+
 import { fadeIn } from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
  
@@ -27,12 +28,20 @@ const styles = {
     animationName: Radium.keyframes(fadeIn, 'fadeIn')
   }
 }
+
+import Spinner from "../Spinner/Spinner";
+
+
 class Pdashboard extends Component {
   constructor() {
     super();
+    this.state = {
+      loading: true
+    }
   }
 
   componentDidMount() {
+    this.setState({ loading: true });
     const options = {
       url: `${process.env.REACT_APP_LINK}/api/patient/getProfile`,
       method: 'GET',
@@ -43,7 +52,7 @@ class Pdashboard extends Component {
     Axios(options).then((res) => {
       console.log(res.data);
       console.log(this.props.patientprofile);
-
+      this.setState({loading: false});
       this.props.setPatientProfile(res.data.profile);
 
       let profiles = { ...res.data.profile };
@@ -117,12 +126,16 @@ class Pdashboard extends Component {
             </Card.Body>
           </Card>
         </div>
+
         <div className="Pdash">
           <Graphbp />
           <Graphd />
           <GraphCovid />
         </div>
         
+
+        {this.state.loading ? <Spinner /> : null}
+
       </div>
       </StyleRoot>
     );

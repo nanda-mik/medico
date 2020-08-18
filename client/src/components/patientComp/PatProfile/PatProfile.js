@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import Axios from 'axios';
 import AddIcon from '@material-ui/icons/Add';
+import "./PatProfile.css";
 import { IconButton } from '@material-ui/core';
 
 class PatProfile extends Component {
