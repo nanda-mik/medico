@@ -39,7 +39,7 @@ const PatientReducer = (state = INITIAL_STATE , action) => {
         case PatientActions.SET_MEDICINES :
             return {
                 ...state,
-                medicines : [...state.medicines , action.payload]
+                medicines : action.payload
             }
         case PatientActions.SET_PULSE :
             return{

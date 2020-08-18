@@ -10,10 +10,10 @@ class GraphCovid extends Component {
    
 	render() {
         let arrs = [];
-        console.log(this.props.diabetes);
-        arrs = this.props.covidTracker.map((d) => {
+        console.log(this.props.pulse);
+        arrs = this.props.pulse.map((d) => {
             return({
-            y : parseInt(d.count), label : d.date
+            y : parseInt(d.pulse), label : d.date
             });
         });
        
@@ -22,23 +22,23 @@ class GraphCovid extends Component {
             theme: "light2",
             backgroundColor : "white",
             title:{
-                text: "Diabetes Monitor"
+                text: "Pulse rate monitor"
             },
             axisY : {
-                title: "Diabetes"
+                title: "Pulserate"
             },
             toolTip: {
                 shared: true
             },
             data: [{
-                type: "column",
+                type: "spline",
                 name: "type-1",
                 showInLegend: true,
                 dataPoints: arrs
             }]
     }
     let graphs = null ;
-    if(this.props.covidTracker.length > 0)  {
+    if(this.props.pulse.length > 0)  {
         graphs = <CanvasJSChart options = {options} 
         
     />
@@ -57,7 +57,7 @@ class GraphCovid extends Component {
 let mapStateToProps = function mapStateToProps (state) {
     
     return {
-        covidTracker : state.patient.covidTracker
+        pulse : state.patient.pulse
     }
 } 
 

@@ -63,6 +63,6 @@ mongoose
   })
   .then((res) => {
     console.log('connected');
-    app.listen(3001, host);
+    app.listen(3001);
   })
   .catch((err) => console.log(err));

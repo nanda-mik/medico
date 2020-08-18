@@ -18,7 +18,15 @@ import Graphbp from './Graphs/Graphbp/Graphbp';
 import Graphd from './Graphs/Graphd/Graphd';
 import GraphCovid from './Graphs/GraphCovid/GraphCovid';
 import Card from 'react-bootstrap/Card'
-
+import { fadeIn } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
+ 
+const styles = {
+  fadeIn: {
+    animation: 'x 1.5s',
+    animationName: Radium.keyframes(fadeIn, 'fadeIn')
+  }
+}
 class Pdashboard extends Component {
   constructor() {
     super();
@@ -40,13 +48,8 @@ class Pdashboard extends Component {
 
       let profiles = { ...res.data.profile };
       console.log(profiles.medicines);
-      if (profiles.medicines.length > 0) {
-        if (this.props.medicines.length !== profiles.medicines) {
-          profiles.medicines.map((medicine) => {
-            this.props.setMedicines(medicine);
-          });
-        }
-      }
+        
+            this.props.setMedicines(profiles.medicines);
       console.log(res.data.monitorData);
       if (res.data.monitorData) {
         let monitors = { ...res.data.monitorData };
@@ -88,27 +91,40 @@ class Pdashboard extends Component {
       }
     });
   }
-
+ 
   render() {
+    let patient = {...this.props.patientprofile};
     return (
-      <div className="dashboard-Pat">
+      <StyleRoot>
+      <div className="dasPat" style={styles.fadeIn}>
+        <div className="Dascard">
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="https://i.pinimg.com/564x/b3/74/10/b37410384d879643d85b390cdb10c7d1.jpg" />
+            <Card.Body>
+              <Card.Title>Your Breif Records</Card.Title>
+              <Card.Text>
+                Hello , {patient.name} you are suffering from {patient.disease} and some of the medicine you are intaking are 
+                {
+                  this.props.medicines.map((med)=>{
+                    return(
+                      <Card.Text>{med}{' '}</Card.Text>
+                    );
+                    
+                  })
+                }
+                Your weight is {patient.weight}.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
         <div className="Pdash">
           <Graphbp />
           <Graphd />
           <GraphCovid />
         </div>
-        <div className="dashboard-card">
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="https://i.pinimg.com/564x/b3/74/10/b37410384d879643d85b390cdb10c7d1.jpg" />
-            <Card.Body>
-              <Card.Title>Your Records</Card.Title>
-              <Card.Text>
-                hello profile details
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </div>
+        
       </div>
+      </StyleRoot>
     );
   }
 }

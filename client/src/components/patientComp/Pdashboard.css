@@ -1,24 +1,18 @@
 .Pdash{
     display: flex;
     flex-direction: column;
-   padding-left: 100px;
-   padding-top:80px;
-   transform: translateX(450px);
+   padding-left: 60px;
+    
 }
 
-.Pdash h1{
-    font-size: 23px;
-    font-family: 'Sriracha', cursive;
-    text-align: center;
-}
 
-.image{
-    height: 30vh;
-    width: 500px;
-}
 
-.dashboard-Pat{
+.dasPat{
     display: flex;
     flex-direction: row;
-    margin-top: 10vh;
+    padding-top:80px;
+    
+}
+.Dascard{
+    padding: 40px;
 }

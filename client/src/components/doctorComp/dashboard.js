@@ -45,7 +45,7 @@ class dashboard extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{paddingTop:"80px" , textAlign:"center", fontFamily: "sans-serif" ,fontSize:"15px"} }>
         {console.log(this.props.patient)}
         <h1>Doctor dashboard!!</h1>
         {this.props.patient.length > 0
@@ -56,7 +56,7 @@ class dashboard extends Component {
                 </div>
               );
             })
-          : null}
+          : <h1>No Patients under monitor!!</h1>}
       </div>
     );
   }

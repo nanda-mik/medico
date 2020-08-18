@@ -35,6 +35,7 @@ class PatProfile extends Component {
       medicines: '',
       aboutMe: '',
       file: null,
+      medicinesarr : []
     };
   }
   componentDidMount() {
@@ -60,13 +61,18 @@ class PatProfile extends Component {
         height: profdata.height,
         disease: profdata.disease,
         aboutMe: profdata.aboutMe,
+        medicinesarr : profdata.medicines
       });
     }
   }
   mHandler = (e) => {
     e.preventDefault();
-    this.props.setMedicines(this.state.medicines);
-    this.setState({ medicines: '' });
+    this.setState(state=>{
+      return {
+        medicinesarr: [...state.medicinesarr,state.medicines],
+        medicines: ""
+      }
+    });
   };
 
   submitHandler = (e) => {
@@ -89,7 +95,7 @@ class PatProfile extends Component {
         weight: this.state.weight,
         height: this.state.height,
         disease: this.state.disease,
-        medicines: this.props.medicines,
+        medicines: this.state.medicinesarr,
         aboutMe: this.state.aboutMe,
       },
     };
@@ -110,6 +116,7 @@ class PatProfile extends Component {
           redirect: false,
         });
       });
+      this.props.setMedicines(this.state.medicinesarr);
   };
 
   render() {
