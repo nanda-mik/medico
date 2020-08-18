@@ -7,7 +7,7 @@ This is under development phase
 Complete practical(Production) build is still under development
 ```
 
-![](assets/images/Medico.jpeg)
+![](assets/images/medico1.PNG)
 
 ### An all in one digital platform which bridges the gap between the patients and physicians for better care of your health during these days under monitorization from doctors. 
 
@@ -63,14 +63,14 @@ Medico, where people can get monitored by the doctor and consult for better heal
 
 ## Screenshots
 
-![](assets/images/medico1)
-![](assets/images/medico3)
-![](assets/images/medico8)
-![](assets/images/medico11)
-![](assets/images/medico16)
-![](assets/images/android1)
-![](assets/images/android2)
-![](assets/images/android3)
+![](assets/images/medico1.PNG)
+![](assets/images/medico3.PNG)
+![](assets/images/medico8.PNG)
+![](assets/images/medico11.PNG)
+![](assets/images/medico16.PNG)
+![](assets/images/android1.jpg)
+![](assets/images/android2.jpg)
+![](assets/images/android3.jpg)
 
 ## How we built it 🏁 Technology Stack
 
@@ -87,6 +87,8 @@ Medico, where people can get monitored by the doctor and consult for better heal
 * [mongoDB](https://www.mongodb.com/)
 * [nodemailer](https://nodemailer.com/about/)
 * [express](https://expressjs.com/)
+
+**Other**
 
 * [Mapquest](https://www.mapquest.com/)
 * [Here API](https://developer.here.com/)
