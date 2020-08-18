@@ -61,7 +61,7 @@ const Chatbot = (props) => {
   return (
     <div
       style={{
-        height: '85%',
+        height: '80%',
         position: 'fixed',
         right: props.show ? 0 : '-1000px',
         bottom: 0,
@@ -91,7 +91,7 @@ const Chatbot = (props) => {
               padding: '5px 5px',
             }}
           />
-          <div>Chat bot</div>
+          <div>DocBot</div>
         </div>
 
         <IoIosClose
