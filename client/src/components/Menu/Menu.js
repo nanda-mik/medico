@@ -23,9 +23,9 @@ class Menu extends Component {
                     <div className="Con">
                 <h1>Let's build a healthy world. </h1>
                 <p>
-                    Facing problem to appoint a doctor in these lockdown days?
+                    Facing problem to appoint a doctor and monitor yourself in these lockdown days?
                 </p>
-                <h2>Thats easy now</h2>
+                <h2>That's easy now</h2>
                 <button onClick={()=> this.setState({redirect: true})}>Register now</button>
                 {redirect}
                 </div>
