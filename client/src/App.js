@@ -437,9 +437,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        {this.state.showBackdrop && (
-          <Backdrop onClick={this.backdropClickHandler} />
-        )}
+       
         <Location
           stateHandler={(name) => this.setState({ stateName: name })}
         ></Location>
@@ -452,6 +450,9 @@ class App extends Component {
           </div>
         ):null}
         {routes}
+        {this.state.showBackdrop && (
+          <Backdrop onClick={this.backdropClickHandler} />
+        )}
         <Layout
           header={
             <Toolbar>
@@ -471,6 +472,8 @@ class App extends Component {
               onChooseItem={this.mobileNavHandler.bind(this, false)}
               onLogout={this.logoutHandler}
               isAuth={this.state.isAuth}
+              isPatient={this.state.isPatient}
+              isDoc={this.state.isDoc}
             />
           }
         >

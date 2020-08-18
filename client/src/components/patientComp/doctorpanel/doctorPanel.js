@@ -5,6 +5,7 @@ import { SearchBox } from '../search-box/search-box';
 import Spinner from "../../Spinner/Spinner";
 
 
+
 class Main extends Component {
   constructor() {
     super();
@@ -45,7 +46,7 @@ class Main extends Component {
         <h1>Doctors</h1>
         <div style={{paddingTop:"80px"}}>
           <SearchBox
-            placeholder="search doctors"
+            placeholder="search for doctors"
             handleChange={this.handleChange}
           />  
         </div>
