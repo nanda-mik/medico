@@ -67,7 +67,7 @@ Medico, where people can get monitored by the doctor and consult for better heal
 ![](assets/images/medico8.PNG)
 ![](assets/images/medico11.PNG)
 ![](assets/images/medico16.PNG)
-![](assets/images/android4.jpg)
+![](assets/images/android4.jpeg)
 
 ## How we built it 🏁 Technology Stack
 
