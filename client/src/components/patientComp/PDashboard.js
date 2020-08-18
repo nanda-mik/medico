@@ -21,7 +21,7 @@ import Card from 'react-bootstrap/Card'
 
 import { fadeIn } from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
- 
+import Spinner from "../Spinner/Spinner";
 const styles = {
   fadeIn: {
     animation: 'x 1.5s',
@@ -29,7 +29,7 @@ const styles = {
   }
 }
 
-import Spinner from "../Spinner/Spinner";
+
 
 
 class Pdashboard extends Component {
