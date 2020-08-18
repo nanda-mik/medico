@@ -1,32 +1,24 @@
 .Pdash{
     display: flex;
     flex-direction: column;
-   
    padding-left: 100px;
    padding-top:80px;
-    
+   transform: translateX(450px);
+}
 
-}
-.Caro{
-    height: 50vh;
-    width: 1340px;
-    background-color: black;
-    border-radius: 100px;
-    margin-bottom: 60px;
-}
 .Pdash h1{
     font-size: 23px;
     font-family: 'Sriracha', cursive;
     text-align: center;
 }
-.Pdash img{
-    height: 300px;
-    width: 300px;
-    border-radius: 100px;
-    transform: translateX(-310px)
-    translateY(-139px);
-}
+
 .image{
     height: 30vh;
     width: 500px;
+}
+
+.dashboard-Pat{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10vh;
 }

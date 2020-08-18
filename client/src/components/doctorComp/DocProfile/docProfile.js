@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, Button, FormControl, Row, Col } from 'react-bootstrap';
 import { Redirect } from 'react-router';
 import Axios from 'axios';
+import "./DocProfile.css";
 import { connect } from 'react-redux';
 import { setDoctorProfile } from '../../../Redux/Doctor/Doctor.Actions';
 
@@ -110,17 +111,10 @@ class DocProfile extends Component {
     let data = { ...this.props.profile };
     const styles = {}
     return (
-      <div className="container">
+      <div className="container-prof">
         <div className="row">
           <Form onSubmit={this.submitHandler}>
             <Form.Label>YOUR PROFILE</Form.Label>
-            <Form.File id="formcheck-api-custom" custom>
-              <Form.File.Input isValid />
-              <Form.File.Label data-browse="Browse files">
-                upload your profile photo
-              </Form.File.Label>
-            </Form.File>
-
             <Form.Group controlId="formPlaintextName">
               <Form.Label as={Row} column sm="2">
                 Name :

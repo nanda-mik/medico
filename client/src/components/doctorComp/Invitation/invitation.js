@@ -36,7 +36,7 @@ class invitation extends Component {
     const patient = this.state.invite;
     console.log(patient);
     return (
-      <div>
+      <div style={{paddingTop: "80px"}}>
         <h2>Appointment Requests</h2>
         {patient.length !== 0 ? (
           <UserCardlist isReq={true} users={patient} />

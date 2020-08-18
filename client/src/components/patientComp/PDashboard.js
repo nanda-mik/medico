@@ -17,7 +17,7 @@ import './Pdashboard.css';
 import Graphbp from './Graphs/Graphbp/Graphbp';
 import Graphd from './Graphs/Graphd/Graphd';
 import GraphCovid from './Graphs/GraphCovid/GraphCovid';
-import Carousel from 'react-bootstrap/Carousel';
+import Card from 'react-bootstrap/Card'
 
 class Pdashboard extends Component {
   constructor() {
@@ -53,11 +53,11 @@ class Pdashboard extends Component {
         console.log(this.props.bloodpressure);
         console.log(monitors.bloodpressure);
 
-            this.props.setBloodpressure(monitors.bloodpressure);
-            this.props.setDiabetes(monitors.diabetes);
-            this.props.setPulse(monitors.pulse);
-            this.props.setCovid(monitors.covid);
-            this.props.setCal(monitors.calories);
+        this.props.setBloodpressure(monitors.bloodpressure);
+        this.props.setDiabetes(monitors.diabetes);
+        this.props.setPulse(monitors.pulse);
+        this.props.setCovid(monitors.covid);
+        this.props.setCal(monitors.calories);
         this.props.covid.map((cov) => {
           let c = 0;
           if (cov.cough === true) {
@@ -91,58 +91,23 @@ class Pdashboard extends Component {
 
   render() {
     return (
-      <div className="Pdash">
-        <div className="Caro">
-          <Carousel>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="holder.js/800x400?text=Third slide&bg=20232a"
-                alt="First slide"
-              />
-              <Carousel.Caption>
-                <h3>Let us begin a new era of communication</h3>
-                <p>
-                  Medico brings u easy monitoring process flexible and
-                  userfriendly access and many more.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="holder.js/800x400?text=Third slide&bg=20232a"
-                alt="Third slide"
-              />
-
-              <Carousel.Caption>
-                <h3>Find best doctors on your fingertips</h3>
-                <p>
-                  We give you to choose your own doctor from your own locality
-                  and get monitored by them.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="holder.js/800x400?text=Third slide&bg=20232a"
-                alt="Third slide"
-              />
-
-              <Carousel.Caption>
-                <h3>Chat rooms</h3>
-                <p>
-                  Chat rooms best quality appointments.Lets stay healthy
-                  together.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
+      <div className="dashboard-Pat">
+        <div className="Pdash">
+          <Graphbp />
+          <Graphd />
+          <GraphCovid />
         </div>
-        <Graphbp />
-        <Graphd />
-        <GraphCovid />
+        <div className="dashboard-card">
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="https://i.pinimg.com/564x/b3/74/10/b37410384d879643d85b390cdb10c7d1.jpg" />
+            <Card.Body>
+              <Card.Title>Your Records</Card.Title>
+              <Card.Text>
+                hello profile details
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
       </div>
     );
   }
