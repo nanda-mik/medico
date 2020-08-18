@@ -15,10 +15,7 @@
         "150gm oat meal",
         " One cup of black herbal tea(tulsi)"
       ],
-      "lunch": [
-        "Pakhala with curd.",
-        "50gm aloo bharta and 50gm spinach"
-      ],
+      "lunch": ["Pakhala with curd.", "50gm aloo bharta and 50gm spinach"],
       "dinner": [
         "one glass milk",
         "4 or 5 cashew nuts",
@@ -55,7 +52,7 @@
       "calories": {
         "amount": 2250,
         "percentages": {
-          "carobhydrate": 55,
+          "carbohydrate": 55,
           "fat": 20,
           "protein": 25,
           "fiber": "34 grams"
@@ -71,11 +68,7 @@
         "Mix vegetable Salad",
         "Fry or curry"
       ],
-      "dinner": [
-        "one glass milk",
-        "2 piece chicken leg",
-        "Hot vegetable curry"
-      ]
+      "dinner": ["one glass milk", "2 piece chicken leg", "Hot vegetable curry"]
     },
     "thursday": {
       "calories": {
@@ -92,10 +85,7 @@
         "150gm oat meal",
         " One cup of black herbal tea(tulsi)"
       ],
-      "lunch": [
-        "Pakhala with curd.",
-        "150gm aloo bharta and 50gm spinach"
-      ],
+      "lunch": ["Pakhala with curd.", "150gm aloo bharta and 50gm spinach"],
       "dinner": [
         "one glass milk",
         "4 or 5 cashew nuts",
@@ -148,11 +138,7 @@
         "Mix vegetable Salad",
         "Fry or curry"
       ],
-      "dinner": [
-        "one glass milk",
-        "2 piece chicken leg",
-        "Hot vegetable curry"
-      ]
+      "dinner": ["one glass milk", "2 piece chicken leg", "Hot vegetable curry"]
     },
     "sunday": {
       "calories": {
@@ -169,14 +155,101 @@
         "150gm oat meal",
         " One cup of black herbal tea(tulsi)"
       ],
-      "lunch": [
-        "Pakhala with curd.",
-        "150gm aloo bharta and 50gm spinach"
-      ],
+      "lunch": ["Pakhala with curd.", "150gm aloo bharta and 50gm spinach"],
       "dinner": [
         "one glass milk",
         "4 or 5 cashew nuts",
         "vermicelli upma 100gm"
+      ]
+    }
+  },
+  "maharashtra": {
+    "wednesday": {
+      "calories": {
+        "amount": 2250,
+        "percentages": {
+          "carbohydrate": 55,
+          "fat": 20,
+          "protein": 25,
+          "fiber": "34 grams"
+        }
+      },
+      "breakfast": [
+        "One grapefruit",
+        "Two poached eggs (or fried in a non-stick pan)",
+        "One cup low-fat milk",
+        "One cup of black coffee or herbal tea"
+      ],
+      "lunch": [
+        "Large garden salad with tomato and onion with one cup croutons, topped with one tablespoon oil and vinegar (or salad dressing).",
+        "Dal bhakri with 50gm dal",
+        "Misal Pav",
+        "Bharil Vangi"
+      ],
+      "dinner": [
+        "Sabudana Vada with 25gm sabu",
+        "4 or 5 cashew nuts",
+        "2 pieces of puran poli"
+      ]
+    }
+  },
+  "west bengal": {
+    "wednesday": {
+      "calories": {
+        "amount": 2250,
+        "percentages": {
+          "carbohydrate": 55,
+          "fat": 20,
+          "protein": 25,
+          "fiber": "34 grams"
+        }
+      },
+      "breakfast": [
+        "Rice OR Besan cheela with onions",
+        "Tea/ coffee (with 50 ml milk)",
+        "Apple",
+        "Buttermilk (ghol)"
+      ],
+      "lunch": [
+        "Wheat bran chapati (no oil).",
+        "Chicken curry/ rui/ katla machher jhol / Arhar dal",
+        "Saag-vegetable dishes (puishaker chocchori, paanch mishali torkari or data chocchori)",
+        "salad"
+      ],
+      "dinner": [
+        "Poha with onions and tomato",
+        "Wheat bran chapati",
+        "Green veg salad",
+        "steamed corn"
+      ]
+    }
+  },
+  "delhi": {
+    "wednesday": {
+      "calories": {
+        "amount": 2250,
+        "percentages": {
+          "carbohydrate": 55,
+          "fat": 20,
+          "protein": 25,
+          "fiber": "34 grams"
+        }
+      },
+      "breakfast": [
+        "One banana",
+        "Two slices whole-grain toast with one pat butter each",
+        "One cup plain yogurt with two tablespoons honey"
+      ],
+      "lunch": [
+        "Chicken breast (6-ounce portion), baked or roasted (not breaded or fried).",
+        "50gm aloo bharta and 50gm spinach",
+        "Large garden salad with tomato and onion with one cup croutons, topped with one tablespoon oil and vinegar (or salad dressing)"
+      ],
+      "dinner": [
+        "One cup steamed broccoli",
+        "One cup of brown rice",
+        "Halibut (four-ounce portion)",
+        "Small garden salad with one cup spinach leaves, tomato, and onion topped with two tablespoons oil and vinegar or salad dressing"
       ]
     }
   }
