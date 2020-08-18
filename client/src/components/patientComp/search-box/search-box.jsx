@@ -5,6 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import SearchIcon from '@material-ui/icons/Search';
 
 export const SearchBox = ({ placeholder, handleChange }) => {
+
     return (
         <div><input
             className='search'
@@ -27,3 +28,4 @@ export const SearchBox = ({ placeholder, handleChange }) => {
         </div>
     );
 }
+

@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 });
 
 // app.use(pino);
-app.use('/api/admin',adminRoutes);
+app.use('/api/admin', adminRoutes);
 app.use('/notifications', notificationRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/patient', patientRoutes);
