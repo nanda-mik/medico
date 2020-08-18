@@ -449,7 +449,7 @@ class App extends Component {
             </Alert>
           </div>
         ):null}
-        {routes}
+      
         {redirectm}
         {redirectu}
           <ChatButton

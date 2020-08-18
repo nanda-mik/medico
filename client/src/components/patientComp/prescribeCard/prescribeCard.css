@@ -1,9 +1,12 @@
 .container{
     overflow-x: none;
     padding: 30px;
+   
+
 }
 .Panel{
     height: 30vh;
-    width: 800px;
+    width: 400px;
+   
    
 }

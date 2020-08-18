@@ -30,7 +30,7 @@ class prescription extends Component {
     const doctors = this.state.doctors;
     console.log(doctors);
     return (
-      <div>
+      <div style={{paddingTop:"80px"}}>
         <h2>Doctors</h2>
         {doctors.length !== 0 ? (
           <UserCardlist isReq={false} users={doctors} />

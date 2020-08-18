@@ -16,7 +16,7 @@ class Menu extends Component {
             redirect=<Redirect to="/signup"/>
         }
         return(
-            <div>
+            <div className="Page">
             <div className="Menu">
                 <div className="Content">
                     

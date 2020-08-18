@@ -52,6 +52,13 @@ class MonitorPatient extends Component {
       caloriesarr : []
     };
   }
+  componentDidMount(){
+    this.setState({bloodpressurearr: this.props.bloodpressure,
+    diabetesarr: this.props.diabetes,
+  covidarr: this.props.covid,
+pulsearr : this.props.pulse,
+caloriesarr : this.props.cal})
+  }
   bphandler = (e) => {
     e.preventDefault();
     var d = new Date();
@@ -134,6 +141,7 @@ class MonitorPatient extends Component {
         pulse: this.state.pulsearr,
       },
     };
+    console.log(options.data);
     Axios(options)
       .then((resData) => {
         if (resData.status !== 200 && resData.status !== 201) {
