@@ -118,7 +118,9 @@ class prescribePage extends Component {
     <Col>Patient's height : {pat.profile.height}cm{' '}</Col>
     </Row>
   </Container>
-  {(dtime.getTime() - ptime.getTime() > 0) ? null : <Card border="danger" style={{ width: '18rem' }}>
+  {
+  (this.state.patData.length>0)?
+  (dtime.getTime() - ptime.getTime() > 0) ? null : <Card border="danger" style={{ width: '18rem' }}>
     <Card.Header>Patient's problem</Card.Header>
     <Card.Body>
   <Card.Title>{b.problemData}</Card.Title>
@@ -126,7 +128,7 @@ class prescribePage extends Component {
       Posted on {b.time}
       </Card.Text>
     </Card.Body>
-  </Card>}
+  </Card> : null}
                   </Card.Body>
                   <Card.Body>
                   <Form onSubmit={this.submtiHandler}>

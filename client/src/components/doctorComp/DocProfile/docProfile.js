@@ -108,6 +108,7 @@ class DocProfile extends Component {
       redirect = <Redirect to="/" />;
     }
     let data = { ...this.props.profile };
+    const styles = {}
     return (
       <div className="container">
         <div className="row">

@@ -45,14 +45,14 @@ class Cards extends Component{
             </div>
             <div className="Doc">
               <Card className="bg-dark text-white">
-  <Card.Img src="https://www.signaturemedicalgroup.com/webres/Image/Stock_Images/Doctors_870x300.jpg" alt="Card image" />
-  <Card.ImgOverlay style={{backgroundColor : "rgba(0,0,0,0.67)"}}>
+  <Card.Img className="Docc" src="https://www.signaturemedicalgroup.com/webres/Image/Stock_Images/Doctors_870x300.jpg" alt="Card image" />
+  <Card.ImgOverlay className="Docc" style={{backgroundColor : "rgba(0,0,0,0.67)" }}>
     <Card.Title>Have privacy issue or network issues??</Card.Title>
     <Card.Text>
      Don't want to turn camera to unknown or got some network issues, we have brought you yet another way of connecting you with 
       your doctor, pick your phone and dial the number below and take the consultation over phone. 
     </Card.Text>
-    <Card.Text><CallIcon/>{' '} Dial on 1800-888-000</Card.Text>
+    <Card.Text style={{fontFamily: "bold" , fontSize: "23px"}}><CallIcon/>{' '} Dial on 1800-888-000</Card.Text>
   </Card.ImgOverlay>
 </Card>
             </div>

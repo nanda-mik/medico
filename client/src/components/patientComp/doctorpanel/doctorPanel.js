@@ -41,9 +41,9 @@ class Main extends Component {
       el.name.toLowerCase().includes(searchField.toLowerCase())
     );
     return (
-      <Fragment>
+      <div>
         <h1>Doctors</h1>
-        <div>
+        <div style={{paddingTop:"80px"}}>
           <SearchBox
             placeholder="search doctors"
             handleChange={this.handleChange}
@@ -55,7 +55,7 @@ class Main extends Component {
             <h2>No Doctors.</h2>
           )}
         {this.state.loading ? <Spinner /> : null}
-      </Fragment>
+      </div>
     );
   }
 }

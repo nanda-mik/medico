@@ -474,6 +474,7 @@ class App extends Component {
             />
           }
         >
+
         {redirectm}
         {redirectu}
           <ChatButton

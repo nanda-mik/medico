@@ -143,7 +143,7 @@ exports.getPrescription = async (req, res, next) => {
         var prescArr = [];
         var problemArr = [];
         var event = [];
-        const eventData = await Appointment.find({patientId: id});
+        const eventData = await Appointment.find({patientId: id,doctorId: docId});
         if(eventData){
             event = eventData;
             console.log(event);
